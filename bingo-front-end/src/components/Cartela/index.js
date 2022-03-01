@@ -1,31 +1,21 @@
-import { Container, Cartela, Numbers }from './style'
+import { Card, Container, Col } from 'react-bootstrap'
 
-export const Card = (props)=> {
+export const Cartela = ()=> {
     return(
-        <Container>
-            <Cartela>
-                <h3>Cartela</h3>
-                <Numbers>
-                    <p>1</p>
-                    <p>1</p>
-                    <p>1</p>
-                    <p>1</p>
-                    <p>1</p>
-                    <p>1</p>
-                    <p>1</p>
-                    <p>1</p>
-                    <p>1</p>
-                    <p>1</p>
-                    <p>1</p>
-                    <p>1</p>
-                    <p>1</p>
-                    <p>1</p>
-                    <p>1</p>
-                </Numbers>
-            </ Cartela>
-
-        </Container>
-
-
+        <Card style={{ width: '18rem' }}>
+            <Card.Title>
+                Cartela
+            </Card.Title>
+            <br/>
+ <Container>    
+    <Col>1111111111</Col>
+    <Col>2 of 2</Col>
+  
+    <Col>1 of 3</Col>
+    <Col>2 of 3</Col>
+    <Col>3 of 3</Col>
+   </Container>
+    
+</Card>
     )
 }
