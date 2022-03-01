@@ -5,7 +5,7 @@ import {Container} from './style'
 import { Routes, BrowserRouter } from 'react-router-dom'
 import {NavBar} from '../src/Navbar'
 import { Panel } from './components/Bolas';
-import {Cartela} from '../src/components/Cartela'
+import {App} from '../src/components/App'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -19,7 +19,7 @@ ReactDOM.render(
         <GlobalStyle /> 
         <Container>
         <Panel />
-        <Cartela />
+        <App/>
         <Routes />
       </Container>
     </BrowserRouter>
