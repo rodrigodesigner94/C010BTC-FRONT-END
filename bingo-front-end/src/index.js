@@ -6,6 +6,7 @@ import { Routes, BrowserRouter } from 'react-router-dom'
 import {NavBar} from '../src/Navbar'
 import { Panel } from './components/Bolas';
 import {Cartela} from '../src/components/Cartela'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
