@@ -6,7 +6,7 @@ export const NavBar = () => {
 
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
-  <Navbar.Brand href="#home">Bingo Game</Navbar.Brand>
+  <Navbar.Brand href="/">Bingo Game</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
@@ -14,10 +14,8 @@ export const NavBar = () => {
       <Nav.Link href="#pricing"></Nav.Link>
     </Nav>
     <Nav>
-      <Nav.Link href="#deets">Log in</Nav.Link>
-      <Nav.Link eventKey={2} href="#memes">
-        Cadastre-se
-      </Nav.Link>
+      <Nav.Link to="/Login">Login</Nav.Link>
+      <Nav.Link to="/Register"> Register </Nav.Link>
     </Nav>
   </Navbar.Collapse>
   </Container>
