@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Login } from "../src/pags/login/login";
 import { Main } from "../src/pags/main/main";
 import { Register } from "../src/pags/register/register";
+import {Game}from "../src/pags/game/game"
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.render(
           <Route element={<Main />} path="/" />
           <Route element={<Login />} path="/Login" />
           <Route element={<Register />} path="/Register" />
+          <Route element={<Game />} path="/Game" />
         </Routes>
         <GlobalStyle />
       </Container>

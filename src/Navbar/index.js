@@ -14,8 +14,8 @@ export const NavBar = () => {
       <Nav.Link href="#pricing"></Nav.Link>
     </Nav>
     <Nav>
-      <Nav.Link to="/Login">Login</Nav.Link>
-      <Nav.Link to="/Register"> Register </Nav.Link>
+      <Nav.Link href="/Login">Login</Nav.Link>
+      <Nav.Link href="/Register"> Register </Nav.Link>
     </Nav>
   </Navbar.Collapse>
   </Container>

@@ -5,38 +5,31 @@ export const Register = () => {
   return (
     <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
+        <Form.Label>firstName</Form.Label>
+        <Form.Control type="string" placeholder="Enter FirstName" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Frist Name</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
+        <Form.Label>Last Name</Form.Label>
+        <Form.Control type="email" placeholder="Enter LastName" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
+        <Form.Label>E-Mail</Form.Label>
+        <Form.Control type="string" placeholder="E-mail" />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
+
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password Comfirm</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
+        <Form.Label>Password </Form.Label>
+        <Form.Control type="string" placeholder="Password" />
       </Form.Group>
 
 
+<Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Comfirm Password </Form.Label>
+        <Form.Control type="string" placeholder="Password Comfirm" />
+      </Form.Group>
 
 
       <Button variant="primary" type="submit">
