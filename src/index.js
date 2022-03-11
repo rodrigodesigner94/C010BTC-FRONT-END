@@ -15,9 +15,9 @@ ReactDOM.render(
     <BrowserRouter>
       <Container>
         <Routes>
-          <Route element={<Main />} path="/" />
-          <Route element={<Login />} path="/Login" />
-          <Route element={<Register />} path="/Register" />
+          <Route path="/" element={<Main />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
         <GlobalStyle />
       </Container>
