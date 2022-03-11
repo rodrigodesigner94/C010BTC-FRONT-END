@@ -1,12 +1,13 @@
-import  { Navbar, Container, Nav, } from "react-bootstrap"
+import  { Navbar, Container, Nav } from "react-bootstrap";
+
 
 export const NavBar = () => {
 
     return(
 
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-  <Container>
-  <Navbar.Brand href="/">Bingo Game</Navbar.Brand>
+  <Container>    
+  <Navbar.Brand href="/">Vegas Bingo</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">

@@ -1,6 +1,11 @@
 import { Dropdown} from 'react-bootstrap'
 
 export const Cartela1 = ()=> {
+
+
+
+
+  
     return(
         <Dropdown>
   <Dropdown.Toggle variant="success" id="dropdown-basic">
