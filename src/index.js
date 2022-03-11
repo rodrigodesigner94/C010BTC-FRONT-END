@@ -13,12 +13,13 @@ import { Sorteio } from '../src/components/Bolas/index';
 import { Cartela } from './components/Cartela/index'
 
 
-axios.defaults.baseURL = 'https://blue-ctb.herokuapp.com/';
+axios.defaults.baseURL = 'https://blue-ctb.herokuapp.com';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
-axios.get('/bola').then((response) => {
-  console.log(response + " BOLA index");
-  })
+axios.get('/bola')
+.then((response) =>{
+  //console.log(response.data[0].bolaSorteio);
+})
 
 ReactDOM.render(
   <React.StrictMode>
