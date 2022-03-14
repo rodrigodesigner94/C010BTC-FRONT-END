@@ -5,6 +5,12 @@ import { Container } from "./style";
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import { NavBar } from "../src/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
+<<<<<<< HEAD
+import { Login } from "../src/pags/login/login";
+import { Main } from "../src/pags/main/main";
+import { Register } from "../src/pags/register/register";
+import {Game}from "../src/pags/game/game"
+=======
 import { Login } from "../src/pages/login";
 import { Main } from "../src/pages/main";
 import { Register } from "../src/pages/register";
@@ -20,6 +26,7 @@ axios.get('/bola')
 .then((response) =>{
   //console.log(response.data[0].bolaSorteio);
 })
+>>>>>>> 7239ec8cc9861397d103744419d568b41cba3dd1
 
 ReactDOM.render(
   <React.StrictMode>
@@ -30,8 +37,12 @@ ReactDOM.render(
           <Route element={<Main />} path="/" />
           <Route element={<Login />} path="/Login" />
           <Route element={<Register />} path="/Register" />
+<<<<<<< HEAD
+          <Route element={<Game />} path="/Game" />
+=======
           <Route element={<Sorteio />} path="/bola" />
           <Route element={<Cartela />} path="/cartela" />
+>>>>>>> 7239ec8cc9861397d103744419d568b41cba3dd1
         </Routes>
         <GlobalStyle />
       </Container>
