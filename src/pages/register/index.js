@@ -1,39 +1,77 @@
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Col } from "react-bootstrap";
 import { GlobalStyle } from "../../components/Global";
 import { Background } from "../../components/Container/background";
-import { FormR } from "../../components/Form"; 
+import { FormR } from "../../components/Form";
+import { useState } from 'react';
+import axios from 'axios';
 
 export const Register = () => {
+  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const inputUser = {
+      email,
+      firstName,
+      password,
+      passwordConfirmation,
+    };
+
+    axios
+      .post('/user', inputUser)
+      .then((response) => {
+        console.log(response.message);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   return (
     <Background>
-      <FormR>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>firstName</Form.Label>
-          <Form.Control type="string" placeholder="Enter FirstName" />
+      <FormR onSubmit={handleSubmit}>
+        <Form.Group className="mb-3" as={Col}>
+          <Form.Label>Nome ou apelido</Form.Label>
+          <Form.Control
+              type="text"
+              placeholder="Digite como você quer ser chamado"
+              onChange={(event) => setFirstName(event.target.value)}
+            />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control type="email" placeholder="Enter LastName" />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3" as={Col}>
           <Form.Label>E-Mail</Form.Label>
-          <Form.Control type="string" placeholder="E-mail" />
+          <Form.Control 
+            type='email' 
+            placeholder='Digite um Email' 
+            onChange={(event) => setEmail(event.target.value)} 
+          />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password </Form.Label>
-          <Form.Control type="string" placeholder="Password" />
+        <Form.Group className="mb-3" as={Col}>
+          <Form.Label>Senha</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Digite uma Senha"
+            onChange={(event) => setPassword(event.target.value)}
+          />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Comfirm Password </Form.Label>
-          <Form.Control type="string" placeholder="Password Comfirm" />
+        <Form.Group className="mb-3" as={Col}>
+          <Form.Label>Confirmar Senha</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Redigite a Senha"
+            onChange={(event) => setPasswordConfirmation(event.target.value)}
+          />
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Register
+          Criar Conta
         </Button>
         <GlobalStyle/>
       </FormR>

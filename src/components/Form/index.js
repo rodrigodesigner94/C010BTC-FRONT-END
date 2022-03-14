@@ -7,7 +7,7 @@ export const FormR = styled(Form)`
   border-radius: 1rem;
   box-shadow: 1px 2px 2em black;
   width: 30rem;
-  height: 35rem;
+  height: 28rem;
 `;
 
 export const FormL = styled(Form)`
