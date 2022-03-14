@@ -9,6 +9,6 @@ export const Background = styled.div`
     display: flex;
     background-size: contain;
     justify-content: center;
-    align-items: center;
     background-size: 100% 100%;
+    padding: 4rem;
 `;

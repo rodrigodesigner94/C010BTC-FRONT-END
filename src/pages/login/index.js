@@ -1,12 +1,13 @@
 import { Form, Button } from "react-bootstrap";
 import { GlobalStyle } from "../../components/Global"
 import { Background } from "../../components/Container/background";
+import { FormL } from "../../components/Form"; 
 
 export const Login = () => {
 
   return (
     <Background>
-      <Form>
+      <FormL>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
@@ -21,7 +22,7 @@ export const Login = () => {
           Login
         </Button>
         <GlobalStyle/>
-      </Form>
+      </FormL>
     </Background>
   );
 };
