@@ -9,7 +9,7 @@ import { Main } from "../src/pages/main";
 import { Register } from "../src/pages/register";
 import { Game } from "../src/pages/game";
 
-axios.defaults.baseURL = 'https://blue-ctb.herokuapp.com';
+axios.defaults.baseURL = 'https://bingoo-btc.herokuapp.com';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 ReactDOM.render(
