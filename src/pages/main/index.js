@@ -7,7 +7,7 @@ export const Main = () => {
 
   return (
     <Background>
-      <a href="/Game">
+      <a href="/Cartela">
         <ButtonB>Jogar</ButtonB>
       </a>
     </Background>

@@ -1,43 +1,34 @@
-import axios from 'axios';
-import { Figure } from 'react-bootstrap'
-import { useEffect, useState } from 'react';
+import bola from '../../assets/bola.png';
+import styled from 'styled-components';
+import { Figure, Card } from 'react-bootstrap'
 
-export const Sorteio = ()=> {
-  const [ sorteio, setSorteios ] = useState([]);
+const Bola = styled(Card)`
+  background-image: url(${bola});
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: contain;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  margin: 0.2rem;
+`;
 
-  const getSorteio = async () => {
-    await axios.get('/bola').then((response) => {
-      setSorteios(response.data);
-      console.log(response.data[0]);  
-    });
-  };
+const Div = styled.div`
+  flex-wrap: wrap;
+  display: flex;
+  margin: 2rem;
+  align-items: center;
+  justify-content: center;
+`;
 
-  useEffect(() =>{
-    getSorteio();
-  }, []);
-
-  const msg = 'Gerando ...'
-
+export const Bolas = () => {
   return( 
     <Figure>
-      <h1>{`${msg}`}</h1>
-      <Figure.Image
-        width={100}
-        height={150}
-        alt="171x180"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu8sKkLo4NarWau9bXf5MWvFq74tdKqufDEA&usqp=CAU"
-      />
-      
-      <Figure.Caption>
-        Cada cartela custa 50 moedas.
-      </Figure.Caption>
-
-      <div className='bolas'>
-        {sorteio.map((item) => (
-          <div key={item.id}>{item.bolaSorteio}</div>
+      <Div>
+        {Array.from({ length: 30 }).map((_, idx) => (
+          <Bola />
         ))}
-      </div>
-
+      </Div>
     </Figure>
   )
 }

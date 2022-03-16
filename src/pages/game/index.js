@@ -1,21 +1,47 @@
 import React from "react";
-import bola from '../../assets/bola.png';
-import { Col , Card , Row } from "react-bootstrap";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { Background } from "../../components/Container/background";
+import { Bolas } from "../../components/Bolas";
+import { Cartela } from "../../components/Cartela";
 
 export const Game =()=>{
+  const [ sorteio, setSorteios ] = useState([]);
+  const [ cartela, setCartela ] = useState([]);
+
+  const getCartela = async () => {
+    await axios.get('/cartela').then((response) => {
+      setCartela(response.data);
+      console.log(response.data[0].linha1cartela);  
+    });
+  };
+
+  const getSorteio = async () => {
+    await axios.get('/bola').then((response) => {
+      setSorteios(response.data);
+      console.log(response.data[0]);  
+    });
+  };
+
+  useEffect(() =>{
+    getSorteio();
+    getCartela();
+  }, []);
 
 return (
-  <Background>
-    <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: 4 }).map((_, idx) => (
-        <Col>
-          <Card>
-            <Card.Img variant="top" src={bola}/>
-          </Card>
-        </Col>
-      ))}
-    </Row>
-  </Background>
+    <Background>
+      <Bolas />
+      <div className='bolas'>
+        {sorteio.map((item) => (
+          <div key={item.id}>{item.bolaSorteio}</div>
+        ))}
+      </div>
+      <div>
+        {cartela.map((item) => (
+          <li key={item.id}><a href='/bola'>{item.linha1cartela}</a></li>
+        ))}
+      </div>
+      <Cartela />
+    </Background>
   );
 };
