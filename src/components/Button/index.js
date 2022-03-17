@@ -6,8 +6,8 @@ export const ButtonB = styled.button`
   background-repeat: no-repeat;
   background-color: transparent;
   background-size: contain;
-  width: 7rem;
-  height: 7rem;
+  width: 5rem;
+  height: 5rem;
   border: none;
   font-size: large;
 

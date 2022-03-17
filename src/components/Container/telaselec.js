@@ -4,14 +4,14 @@ import telaSelecao from '../../assets/telaSelecao.jpg';
 export const BackgroundSelec = styled.div`
     background-image: url(${telaSelecao});
     background-repeat: no-repeat;
-    width: 100%;
-    height: 50rem;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     background-size: contain;
     justify-content: center;
     background-size: 100% 100%;
-    padding: 4rem;
-    flex-direction: column;
+    /* padding-top: -8rem; */
+    flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-end;
 `;
