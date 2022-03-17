@@ -1,4 +1,7 @@
+import React from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 const Div = styled.div`
   display: flex;
@@ -24,16 +27,16 @@ const ButtonJ = styled.button`
 
 export const Selecionar = () => {
   return(
-    <Div class="input-group">
-      <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+    <Div className="input-group" aria-label="Example select with button addon">
+      <select className="form-select" >
         <option selected>Quantidade de cartelas</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
+        <option defaultValue="1">1</option>
+        <option defaultValue="1">2</option>
+        <option defaultValue="1">3</option>
+        <option defaultValue="1">4</option>
       </select>
-      <span class="input-group-text">$</span>
-      <span class="input-group-text">0.00</span>
+      <span className="input-group-text">$</span>
+      <span className="input-group-text">0.00</span>
       <a href="/Game">
         <ButtonJ>Iniciar</ButtonJ>
       </a>

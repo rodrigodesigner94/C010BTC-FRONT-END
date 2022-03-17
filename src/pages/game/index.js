@@ -6,40 +6,36 @@ import { Bolas } from "../../components/Bolas";
 import { Cartela } from "../../components/Cartela";
 
 export const Game =()=>{
-  const [ sorteio, setSorteios ] = useState([]);
-  const [ cartela, setCartela ] = useState([]);
+  // const [ sorteio, setSorteios ] = useState([]);
+  // const [ cartela, setCartela ] = useState([]);
 
-  const getCartela = async () => {
-    await axios.get('/cartela').then((response) => {
-      setCartela(response.data);
-      console.log(response.data[0].linha1cartela);  
-    });
-  };
+  // const getCartela = async () => {
+  //   await axios.get('/cartela').then((response) => {
+  //     setCartela(response);
+  //     console.log(response.data[0].linha1cartela);  
+  //   });
+  // };
 
-  const getSorteio = async () => {
-    await axios.get('/bola').then((response) => {
-      setSorteios(response.data);
-      console.log(response.data[0]);  
-    });
-  };
+  // const getSorteio = async () => {
+  //   await axios.get('/bola').then((response) => {
+  //     setSorteios(response);
+  //     console.log(response.data[0]);  
+  //   });
+  // };
 
-  useEffect(() =>{
-    getSorteio();
-    getCartela();
-  }, []);
+  // useEffect(() =>{
+  //   getSorteio();
+  //   getCartela();
+  // }, []);
 
 return (
     <BackgroundGame>
       <Bolas />
       <div className='bolas'>
-        {sorteio.map((item) => (
-          <div key={item.id}>{item.bolaSorteio}</div>
-        ))}
+        
       </div>
       <div>
-        {cartela.map((item) => (
-          <li key={item.id}><a href='/bola'>{item.linha1cartela}</a></li>
-        ))}
+        
       </div>
       <Cartela />
     </BackgroundGame>
