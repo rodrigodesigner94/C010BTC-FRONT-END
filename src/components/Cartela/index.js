@@ -2,11 +2,15 @@ import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import api from "../../services/Api";
 
-const DivC = styled.div`
-  background-color: rgba(245, 245, 245, 0.6);
+export const DivC = styled.div`
+  background-color: rgba(245, 245, 245, 0.8);
   padding: 1rem;
+  margin: 1rem;
   border-radius: 1rem;
-`;
+  width: 25rem;
+  height: 15rem;
+  align-items: center;
+  justify-content: center;
 
 export const Cartela = (item)=> {
 

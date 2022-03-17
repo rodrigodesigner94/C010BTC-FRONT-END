@@ -10,7 +10,7 @@ export const BackgroundGame = styled.div`
     background-size: contain;
     justify-content: center;
     background-size: 100% 100%;
-    padding: 4rem;
+    padding: 1rem;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;

@@ -4,7 +4,10 @@ import bola from '../../assets/bola.png';
 import styled from 'styled-components';
 import api from '../../services/Api';
 
-const Bola = styled(Card)`
+export const Bola = styled(Card)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: url(${bola});
   background-repeat: no-repeat;
   background-color: transparent;
