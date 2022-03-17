@@ -11,7 +11,7 @@ export const DivC = styled.div`
   height: 15rem;
   align-items: center;
   justify-content: center;
-
+`
 export const Cartela = (item)=> {
 
   const [linha, setLinha] = useState([]);
