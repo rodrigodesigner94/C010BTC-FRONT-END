@@ -1,8 +1,11 @@
 import bola from '../../assets/bola.png';
 import styled from 'styled-components';
-import { Figure, Card } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 
-const Bola = styled(Card)`
+export const Bola = styled(Card)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: url(${bola});
   background-repeat: no-repeat;
   background-color: transparent;
@@ -13,22 +16,11 @@ const Bola = styled(Card)`
   margin: 0.2rem;
 `;
 
-const Div = styled.div`
+export const Div = styled.div`
   flex-wrap: wrap;
   display: flex;
-  margin: 2rem;
+  margin: 1rem;
   align-items: center;
   justify-content: center;
+  max-width: 57rem;
 `;
-
-export const Bolas = () => {
-  return( 
-    <Figure>
-      <Div>
-        {Array.from({ length: 30 }).map((_, idx) => (
-          <Bola />
-        ))}
-      </Div>
-    </Figure>
-  )
-}
