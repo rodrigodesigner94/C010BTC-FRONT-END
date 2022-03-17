@@ -6,10 +6,10 @@ export const ButtonB = styled.button`
   background-repeat: no-repeat;
   background-color: transparent;
   background-size: contain;
-  width: 15rem;
-  height: 15rem;
+  width: 7rem;
+  height: 7rem;
   border: none;
-  font-size: xx-large;
+  font-size: large;
 
   :hover{
     transform: scale(1.1)

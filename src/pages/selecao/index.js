@@ -1,12 +1,12 @@
 import React from "react";
 import { Selecionar } from "../../components/Button/qtdCartelas";
-import { Background } from "../../components/Container/background";
+import { BackgroundSelec } from "../../components/Container/telaselec";
 
 export const Cartela = () => {
 
   return (
-    <Background>
+    <BackgroundSelec>
       <Selecionar />
-    </Background>
+    </BackgroundSelec>
   );
 };

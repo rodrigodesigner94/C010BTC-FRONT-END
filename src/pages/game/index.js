@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Background } from "../../components/Container/background";
+import { BackgroundGame } from "../../components/Container/telaGame";
 import { Bolas } from "../../components/Bolas";
 import { Cartela } from "../../components/Cartela";
 
@@ -29,7 +29,7 @@ export const Game =()=>{
   }, []);
 
 return (
-    <Background>
+    <BackgroundGame>
       <Bolas />
       <div className='bolas'>
         {sorteio.map((item) => (
@@ -42,6 +42,6 @@ return (
         ))}
       </div>
       <Cartela />
-    </Background>
+    </BackgroundGame>
   );
 };

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const DivC = styled.div`
-  background-color: white;
+  background-color: rgba(245, 245, 245, 0.6);
   padding: 1rem;
   border-radius: 1rem;
 `;
