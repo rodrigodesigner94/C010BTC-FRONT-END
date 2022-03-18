@@ -1,13 +1,18 @@
 import React from "react";
-import axios from "axios";
-import { Button } from "react-bootstrap";
-import { Background } from "./styled";
-import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { ButtonB } from "../../components/Button";
+import { Background } from "../../components/Container/background";
+import { PlacaBV } from "../../components/Container/placa";
 
 export const Main = () => {
+
   return (
     <Background>
-      <Button variant="outline-primary">Play Game</Button>
+      <PlacaBV>
+      <a href="/Cartela">
+        <ButtonB>Jogar</ButtonB>
+      </a>
+      </PlacaBV>
     </Background>
   );
 };

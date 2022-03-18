@@ -1,40 +1,26 @@
-import { Card, Figure } from 'react-bootstrap'
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import bola from '../../assets/bola.png';
+import styled from 'styled-components';
+import { Card } from 'react-bootstrap'
 
-export const Sorteio = ()=> {
-  const [ sorteio, setSorteio ] = useState([]);
+export const Bola = styled(Card)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(${bola});
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: contain;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  margin: 0.2rem;
+`;
 
-  const getSorteio = async () => {
-    await axios.get('/bola').then((response) => {
-      setSorteio(response.data);
-      console.log(response.data);  
-    });
-  };
-
-  useEffect(() =>{
-    getSorteio();
-  }, []);
-  
-  const msg = 'Gerando ...'
-
-  return( 
-    <Figure>
-      <h1>{`${msg}`}</h1>
-      <Figure.Image
-        width={200}
-        height={350}
-        alt="171x180"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu8sKkLo4NarWau9bXf5MWvFq74tdKqufDEA&usqp=CAU"
-      />
-      
-      <Figure.Caption>
-        Cada cartela custa 50 moedas.
-      </Figure.Caption>
-      
-      <Card >
-
-      </Card> 
-    </Figure>
-  )
-}
+export const Div = styled.div`
+  flex-wrap: wrap;
+  display: flex;
+  margin: 1rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 57rem;
+`;

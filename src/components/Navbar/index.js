@@ -1,29 +1,24 @@
-import styled from 'styled-components';
 import  { Navbar, Container, Nav } from "react-bootstrap";
 
-const ContainerS = styled(Container)`
-  align-items: center;
-
-  a {
-    color: #f2d974;
-    margin: 0.35rem;
-    text-decoration: none;
-  }
-`;
-
 export const NavBar = () => {
+
   return(
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <ContainerS>    
-        <a href="/">Vegas Bingo</a>
+      <Container>
+        <Navbar.Brand href="/">Vegas Bingo</Navbar.Brand>
+        {/* <Navbar.Brand href="/Game">Jogar </Navbar.Brand> */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#features"></Nav.Link>
+            <Nav.Link href="#pricing"></Nav.Link>
+          </Nav>
           <Nav>
-            <a href="/login">Entre</a>
-            <a href="/register">Cadastre-se</a>
+            <Nav.Link href="/Login">Login</Nav.Link>
+            <Nav.Link href="/Register"> Register </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-      </ContainerS>
+      </Container>
     </Navbar>
   );
 };
