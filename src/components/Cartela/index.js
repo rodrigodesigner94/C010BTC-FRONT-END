@@ -44,5 +44,4 @@ export const DivC = styled.div`
     background-color: #8c9196;
   }
 
-
 `;
