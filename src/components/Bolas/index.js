@@ -14,6 +14,12 @@ export const Bola = styled(Card)`
   height: 3rem;
   border: none;
   margin: 0.2rem;
+
+  :hover{
+    width: 3.5rem;
+    height: 3.5rem;
+    
+  }
 `;
 
 export const Div = styled.div`

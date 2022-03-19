@@ -28,7 +28,7 @@ export const DivC = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: #bac7db;
     padding: 0.5rem;
     margin: 0.2rem;
     width: 4rem;
@@ -38,4 +38,11 @@ export const DivC = styled.div`
     border-width: 1px;
     font-size: larger;
   }
+  p:hover{
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: #8c9196;
+  }
+
+
 `;
