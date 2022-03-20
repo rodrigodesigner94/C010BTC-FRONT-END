@@ -61,7 +61,10 @@ const [cartela4, setCartela4] = useState([]);
 
 
 //DELETE
+//useEffect(() =>{
+//api.delete('/cartela')
 
+//}, [])
 
 //POST
 useEffect(() =>{
@@ -136,20 +139,21 @@ console.log(linha1);
 
   <DivD>
   <h1>2 Cartela</h1>
+  <a href="/Game2">
         <ButtonJ>Iniciar</ButtonJ>
       </a>
   </DivD>
 
   <DivD>
   <h1>3 Cartela</h1>
-  <a href="/Game">
+  <a href="/Game3">
         <ButtonJ>Iniciar</ButtonJ>
       </a>
   </DivD>
 
   <DivD>
   <h1>4 Cartela</h1>
-  <a href="/Game">
+  <a href="/Game4">
         <ButtonJ>Iniciar</ButtonJ>
       </a>
   </DivD>
