@@ -7,9 +7,11 @@ import { DivC } from "../../components/Cartela";
 import  "reflect-metadata" ;
 
 
-export const Game = () =>{
+export const Game2 = () =>{
   const [ sorteio, setSorteio ] = useState([]);
   const [ linha, setLinha ] = useState([]);
+  const [ linha2, setLinha2 ] = useState([]);
+ 
 
 
   //DELETE
@@ -31,8 +33,7 @@ export const Game = () =>{
       headers: {
         'Content-Type': 'application/json'
       },
-    })
-    
+    }) 
   }, [])
   
 
@@ -57,11 +58,13 @@ export const Game = () =>{
       let tm = response.data.length
       if(tm === 0){
       setLinha(response.data[0].linhaCartela)
-     
+      setLinha2(response.data[1].linhaCartela)
+      
      }else if(tm > 0) {
       tm = response.data.length -1
       setLinha(response.data[tm -1].linhaCartela)
-      
+      setLinha2(response.data[tm -2].linhaCartela)
+     
       }
 
 
@@ -74,24 +77,24 @@ export const Game = () =>{
   }, []);
 
   const nLinha = JSON.stringify(linha).replace(/[\\"]/g, '')
+  const nLinha2 = JSON.stringify(linha2).replace(/[\\"]/g, '')
  
 
   const linha1 = JSON.parse(nLinha)
- 
+  const novalinha2 = JSON.parse(nLinha2)
+
 
   const nSorteio = JSON.stringify(sorteio).replace(/[\\"]/g, '')
   const sorteioInt = JSON.parse(nSorteio)
   
   
 
- //const marcar = () => {
+const marcar = () => {
   const acertos = sorteioInt.filter((numero) =>
   linha1.includes(numero)
-  
   );
-  //console.log(acertos + " ACERTOS" + " Numeros" + numero);
- 
-//}
+ //console.log(acertos + " ACERTOS");
+}
 
   
   return (
@@ -102,7 +105,6 @@ export const Game = () =>{
       <Bola key={i}>{item}</Bola>
     ))
  }
- 
       </Div>
       
       <Div>
@@ -110,28 +112,26 @@ export const Game = () =>{
         <DivC>
           <table>
             <tbody>
-            {
-              acertos.map((item, i) => (
-                <p style={{display: 'none'}}key={i}>{item}</p> 
-                ))
-                }
-               {
-                
-              linha1.map((item, i) => (
-                <p key={i}>{item}
-                
-                </p>
-                ))
+              {linha1.map((item, i) => (
+                <p style={{background: "red"}} key={i}> {item}</p>
+                ))}
+            </tbody>
+          </table>
+        </DivC>
 
-
-                }
+        <DivC>
+          <table>
+            <tbody>
+              {novalinha2.map((item, i) => (
+                <p key={i}> {item}</p>
+                ))}
             </tbody>
           </table>
         </DivC>
 
       </Div>
-      <button >Marcar Cartela</button>
-      <button >Voltar</button>
+      <button onClick={marcar}>Marcar Cartela</button>
+      <button onClick={marcar}>Voltar</button>
     </BackgroundGame>
   );
 };

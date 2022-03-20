@@ -14,4 +14,16 @@ export const BackgroundGame = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
+    button{
+        border-radius: 10px;
+        background-color: #bac7db;
+    }
+
+    button:hover{ 
+        width: 104px;
+        height: 26px;
+        font-size: 13px;
+       background-color: #8c9196;
+    }
 `;
