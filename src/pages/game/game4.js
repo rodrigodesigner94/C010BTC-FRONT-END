@@ -7,7 +7,7 @@ import { DivC } from "../../components/Cartela";
 import  "reflect-metadata" ;
 
 
-export const Game = () =>{
+export const Game4 = () =>{
   const [ sorteio, setSorteio ] = useState([]);
   const [ linha, setLinha ] = useState([]);
   const [ linha2, setLinha2 ] = useState([]);
@@ -16,9 +16,11 @@ export const Game = () =>{
 
 
   //DELETE
+
   // useEffect(() =>{
   //   api.delete('/partida') 
   // }, [])
+  
 
 
 
@@ -54,6 +56,7 @@ export const Game = () =>{
 
 
     api.get('/cartela').then((response) =>{
+     
       let tm = response.data.length
       if(tm === 0){
       setLinha(response.data[0].linhaCartela)
@@ -67,9 +70,13 @@ export const Game = () =>{
       setLinha3(response.data[tm -3].linhaCartela)
       setLinha4(response.data[tm -4].linhaCartela)
       }
+
+
       console.log(tm +  " LINHA CARTELA ");
       console.log(response.data.length +  " DATA ");
     })
+
+    
 
   }, []);
 
@@ -104,7 +111,6 @@ const marcar = () => {
       <Bola key={i}>{item}</Bola>
     ))
  }
- 
       </Div>
       
       <Div>
@@ -113,7 +119,7 @@ const marcar = () => {
           <table>
             <tbody>
               {linha1.map((item, i) => (
-                <p key={i}> {item}</p>
+                <p style={{background: "red"}} key={i}> {item}</p>
                 ))}
             </tbody>
           </table>
@@ -143,13 +149,16 @@ const marcar = () => {
           <table>
             <tbody>
               {novalinha4.map((item, i) => (
+                
                 <p key={i}> {item}</p>
+                
                 ))}
             </tbody>
           </table>
         </DivC>
       </Div>
       <button onClick={marcar}>Marcar Cartela</button>
+      <button onClick={marcar}>Voltar</button>
     </BackgroundGame>
   );
 };
