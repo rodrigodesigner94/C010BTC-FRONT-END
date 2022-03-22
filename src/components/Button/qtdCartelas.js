@@ -55,18 +55,34 @@ const DivD = styled.div`
 
 export const Selecionar = () => {
 const [cartela1, setCartela1] = useState([]);
-const [cartela2, setCartela2] = useState([]);
-const [cartela3, setCartela3] = useState([]);
-const [cartela4, setCartela4] = useState([]);
 
 
-//DELETE
-//useEffect(() =>{
-//api.delete('/cartela')
 
-//}, [])
+//DELETE PARTIDA
+// useEffect(() =>{
+//   api.delete('/partida') 
+// }, [])
 
-//POST
+
+//DELETE CARTELA
+// useEffect(() =>{
+// api.delete('/cartela')
+// }, [])
+
+//POST PARTIDA
+useEffect(() =>{
+  api.post('/partida', { 
+    bolaSorteio: "string",
+    premio: "string",
+    inicio: "2022-03-22T00:29:51.261Z",
+    fim: "2022-03-22T00:29:51.261Z",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  }) 
+}, [])
+
+//POST Cartela 1
 useEffect(() =>{
   api.post('/cartela', { 
       cartela: 1,
@@ -78,6 +94,7 @@ useEffect(() =>{
   
 }, [])
 
+//POST Cartela 2
 useEffect(() =>{
   api.post('/cartela', { 
       cartela: 2,
@@ -89,6 +106,7 @@ useEffect(() =>{
   
 }, [])
 
+//POST Cartela 3
 useEffect(() =>{
   api.post('/cartela', { 
       cartela: 3,
@@ -100,6 +118,8 @@ useEffect(() =>{
   
 }, [])
 
+
+//POST Cartela 4
 useEffect(() =>{
   api.post('/cartela', { 
       cartela: 4,
