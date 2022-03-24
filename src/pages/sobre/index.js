@@ -14,7 +14,7 @@ const Background = styled.body`
 const Scrum = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 `;
 
@@ -82,7 +82,7 @@ const DivG = styled.div`
   background-color: white;
   height: auto;
   padding: 2rem;
-  margin: 2rem;
+  margin: 1rem;
   border-radius: 2rem;
   display: flex;
   align-items: center;
@@ -150,7 +150,7 @@ export const Sobre = () => {
           <IconDiv>
             <h3>Acesse:</h3>
             <a href="https://github.com/johnicassere"><IconGit /></a>
-            <IconLink />
+            <a href=""><IconLink /></a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -159,8 +159,8 @@ export const Sobre = () => {
           <h2>Front-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <IconGit />
-            <IconLink />
+            <a href="https://github.com/rodrigodesigner94"><IconGit /></a>
+            <a href="https://www.linkedin.com/in/rodrigo-borges-78a359a1/"><IconLink /></a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -169,8 +169,8 @@ export const Sobre = () => {
           <h2>Front-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <IconGit />
-            <IconLink />
+            <a href=""><IconGit /></a>
+            <a href=""><IconLink /></a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -179,8 +179,8 @@ export const Sobre = () => {
           <h2>Front-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <IconGit />
-            <IconLink />
+            <a href="https://github.com/Wilbyl"><IconGit /></a>
+            <a href="https://www.linkedin.com/in/willian-oliveira-605134145/"><IconLink /></a>
           </IconDiv>
         </DivG>
       </Scrum>
