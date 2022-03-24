@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { BackgroundGame } from "../../components/Container/telaGame";
 import { Bola, Div } from "../../components/Bolas";
 import { DivC } from "../../components/Cartela";
-import  styled  from 'styled-components';
 import  "reflect-metadata" ;
 
 
@@ -31,7 +30,8 @@ export const Game = () =>{
 
   useEffect(() =>{ 
     api.get('/partida').then((response) =>{
-        setSorteio(response.data[0].bolaSorteio);
+      let tm = response.data.length -1
+        setSorteio(response.data[tm].bolaSorteio);
      // console.log(response.data[0].bolaSorteio + " SORTEIO ");
     
     })
@@ -54,13 +54,12 @@ export const Game = () =>{
   const acertos = sorteioInt.filter((numero) =>
   linha1.includes(numero) 
   );
-  console.log(linha1 + " LINHA1" );
-  //console.log(acertos.sort((a, b) => a -b) + " ACERTOS" );
+  //console.log(linha1 + " LINHA1 " );
+  console.log(nSorteio + " nSorteio " );
+  console.log(sorteioInt + " sorteioInt " );
+  //console.log(acertos + " ACERTOS " );
+  console.log(acertos.sort((a, b) => a -b) + " ACERTOS" );
  
-  const pe = styled.p`
-  background-color: green;
-  `
-  
   
 
   return (
@@ -76,39 +75,22 @@ export const Game = () =>{
       <Div>
         <DivC>
           <table>
+            
             <tbody>
+              
                {
               linha1.map((item, i) => (
-                
-                <p className="map"  key={i}>{item}
-                {
-
-                   linha1.map((it,indi) =>{
-                    sorteioInt.map((subItem, subIndice) =>{
-                      if(it === subItem){ 
-                        <p style={{'background': 'green'}}>{i}</p>         
-                        console.log(it + " " + indi + " O " + subItem);
-                      }
-
-                      })
-                    })    
-                 }
-
-{/* "                <li className='todo-list__item'
-                 style={(item.complete) ? styles.complete : {}} />" */}
-               
-                </p>
-                
+                <tr key={i}>{item}</tr>  
                 ))
 
                 }
             </tbody>
           </table>
         </DivC>
-                <h1>{`Parabens Você acertou ${acertos.sort((a, b) => a -b)}`}</h1>
+        <h3>{`Parabens Você acertou ${acertos.sort((a, b) => a -b)}`}</h3>
       </Div>
       <button >Marcar Cartela</button>
-      <button >Voltar</button>
+      <a href="/cartela"><button >Voltar</button></a>
     </BackgroundGame>
   );
 };

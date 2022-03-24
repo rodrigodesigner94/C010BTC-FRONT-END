@@ -12,7 +12,6 @@ import { Game2 } from "./pages/game/game2";
 import { Game3 } from "./pages/game/game3";
 import { Game4 } from "./pages/game/game4";
 import { Cartela } from "./pages/selecao";
-import { Sobre } from "./pages/sobre"
 
 axios.defaults.baseURL = 'https://bingoo-btc.herokuapp.com';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -30,7 +29,6 @@ ReactDOM.render(
         <Route element={<Game3 />} path="/Game3" />
         <Route element={<Game4 />} path="/Game4" />
         <Route element={<Cartela />} path="/Cartela" />
-        <Route element={<Sobre />} path="/Sobre" />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

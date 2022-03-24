@@ -27,7 +27,8 @@ export const Game3 = () =>{
 
   useEffect(() =>{ 
     api.get('/partida').then((response) =>{
-     setSorteio(response.data[2].bolaSorteio);
+      let tm = response.data.length -1
+     setSorteio(response.data[tm].bolaSorteio);
     
     })
     
@@ -55,12 +56,12 @@ export const Game3 = () =>{
   
   
 
-const marcar = () => {
+
   const acertos = sorteioInt.filter((numero) =>
-  linha1.includes(numero)
+  `${linha1} ${novalinha2} ${novalinha3}`.includes(numero)
   );
  //console.log(acertos + " ACERTOS");
-}
+
 
   
   return (
@@ -79,7 +80,7 @@ const marcar = () => {
           <table>
             <tbody>
               {linha1.map((item, i) => (
-                <p style={{background: "red"}} key={i}> {item}</p>
+                <tr key={i}>{item}</tr>
                 ))}
             </tbody>
           </table>
@@ -89,7 +90,7 @@ const marcar = () => {
           <table>
             <tbody>
               {novalinha2.map((item, i) => (
-                <p key={i}> {item}</p>
+                <tr key={i}>{item}</tr>
                 ))}
             </tbody>
           </table>
@@ -99,15 +100,15 @@ const marcar = () => {
           <table>
             <tbody>
               {novalinha3.map((item, i) => (
-                <p key={i}> {item}</p>
+                <tr key={i}>{item}</tr>
                 ))}
             </tbody>
           </table>
         </DivC>
-
+        <h3 style={{color: 'white'}}>{`Parabens Você acertou ${acertos.sort((a, b) => a -b)}`}</h3>
       </Div>
-      <button onClick={marcar}>Marcar Cartela</button>
-      <button onClick={marcar}>Voltar</button>
+      <button >Marcar Cartela</button>
+      <a href="/cartela"><button >Voltar</button></a>
     </BackgroundGame>
   );
 };

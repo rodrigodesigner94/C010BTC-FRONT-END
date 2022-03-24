@@ -73,6 +73,7 @@ const [cartela1, setCartela1] = useState([]);
 useEffect(() =>{
   api.post('/partida', { 
     bolaSorteio: "string",
+    hits: "string",
     premio: "string",
     inicio: "2022-03-22T00:29:51.261Z",
     fim: "2022-03-22T00:29:51.261Z",
@@ -177,19 +178,6 @@ console.log(linha1);
         <ButtonJ>Iniciar</ButtonJ>
       </a>
   </DivD>
-  
-    {/* <Div className="input-group"> 
-      <select className="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-        <option selected>Quantidade de cartelas</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
-      <span className="input-group-text">$</span>
-      <span className="input-group-text">0.00</span>  
-    </Div> */}
- 
     </>
   )
 }
