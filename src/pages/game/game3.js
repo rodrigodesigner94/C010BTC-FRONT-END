@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { BackgroundGame } from "../../components/Container/telaGame";
 import { Bola, Div } from "../../components/Bolas";
 import { DivC } from "../../components/Cartela";
-import  "reflect-metadata" ;
+
 
 
 export const Game3 = () =>{
