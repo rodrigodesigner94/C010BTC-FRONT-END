@@ -3,6 +3,7 @@ import { GlobalStyle } from "../../components/Global";
 import { Background } from "../../components/Container/background";
 import { FormR } from "../../components/Form";
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 export const Register = () => {
@@ -10,6 +11,7 @@ export const Register = () => {
   const [firstName, setFirstName] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,6 +31,8 @@ export const Register = () => {
       .catch((error) => {
         console.log(error.message);
       });
+
+    navigate('/Login')
   };
 
   return (
