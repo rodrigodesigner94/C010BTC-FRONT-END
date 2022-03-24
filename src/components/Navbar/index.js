@@ -1,6 +1,31 @@
 import  { Navbar, Container, Nav } from "react-bootstrap";
 
 export const NavBar = () => {
+<<<<<<< Updated upstream
+=======
+  const [user, setUser] = useState({});
+  const [logged, setLogged] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.token;
+
+    if (!user.firstName) {
+      setShowLogin(true);
+      setLogged(false);
+    }
+
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+
+    api.get('/auth', config).then((response) => {
+      setLogged(true);
+      setShowLogin(false);
+      setUser(response.data);
+    });
+  }, [logged, user.firstName]);
+>>>>>>> Stashed changes
 
   return(
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
