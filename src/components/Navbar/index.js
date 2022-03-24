@@ -1,8 +1,8 @@
-import  { Navbar, Container, Nav } from "react-bootstrap";
+import api from '../../services/Api';
+import { Navbar, Container, Nav } from "react-bootstrap";
+import { useEffect, useState } from 'react';
 
 export const NavBar = () => {
-<<<<<<< Updated upstream
-=======
   const [user, setUser] = useState({});
   const [logged, setLogged] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
@@ -21,27 +21,34 @@ export const NavBar = () => {
 
     api.get('/auth', config).then((response) => {
       setLogged(true);
-      setShowLogin(false);
+      setShowLogin(true);
       setUser(response.data);
     });
   }, [logged, user.firstName]);
->>>>>>> Stashed changes
 
   return(
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand href="/">Vegas Bingo</Navbar.Brand>
-        {/* <Navbar.Brand href="/Game">Jogar </Navbar.Brand> */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
+            <Nav.Link href="/Sobre">Sobre</Nav.Link>
             <Nav.Link href="#features"></Nav.Link>
             <Nav.Link href="#pricing"></Nav.Link>
           </Nav>
-          <Nav>
-            <Nav.Link href="/Login">Login</Nav.Link>
-            <Nav.Link href="/Register"> Register </Nav.Link>
-          </Nav>
+          {showLogin && (
+            <Nav>
+              <Nav.Link href="/Login">Login</Nav.Link>
+              <Nav.Link href="/Register"> Register </Nav.Link>
+            </Nav>
+          )}
+          {logged && (
+            <Nav>
+              <Nav.Link>{`Usuario: ${user.firstName}`}</Nav.Link>
+              <Nav.Link>{`Saldo: R$${user.saldo}`}</Nav.Link>
+            </Nav>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
