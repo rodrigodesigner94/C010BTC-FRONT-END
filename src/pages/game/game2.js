@@ -13,67 +13,29 @@ export const Game2 = () =>{
   const [ linha2, setLinha2 ] = useState([]);
  
 
-
-  //DELETE
-
-  // useEffect(() =>{
-  //   api.delete('/partida') 
-  // }, [])
-  
+  //DELETE PARTIDA
+// useEffect(() =>{
+//   api.delete('/partida') 
+// }, [])
 
 
-
-  //POST
-  useEffect(() =>{
-    api.post('/partida', { 
-      bolaSorteio: "string",
-      premio: "string",
-      inicio: "2022-03-19T20:41:28.333Z",
-      fim: "2022-03-19T20:41:28.333Z",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    }) 
-  }, [])
-  
+//DELETE CARTELA
+// useEffect(() =>{
+// api.delete('/cartela')
+// }, [])
 
   useEffect(() =>{ 
-    api.get('/partida').then((response) =>{
-      let tm = response.data.length
-     // if(tm === 0){
-        setSorteio(response.data[0].bolaSorteio);
-
-      //}else if(tm > 0) {
-        tm = response.data.length -1
-       // setSorteio(response.data[tm].bolaSorteio);
-      //}
-     // console.log(response.data[0].bolaSorteio + " SORTEIO ");
-    
+    api.get('/partida').then((response) =>{   
+   setSorteio(response.data[1].bolaSorteio);
     })
     
 
 
     api.get('/cartela').then((response) =>{
-     
-      let tm = response.data.length
-      if(tm === 0){
       setLinha(response.data[0].linhaCartela)
-      setLinha2(response.data[1].linhaCartela)
-      
-     }else if(tm > 0) {
-      tm = response.data.length -1
-      setLinha(response.data[tm -1].linhaCartela)
-      setLinha2(response.data[tm -2].linhaCartela)
-     
-      }
+      setLinha2(response.data[1].linhaCartela) 
 
-
-      console.log(tm +  " LINHA CARTELA ");
-      console.log(response.data.length +  " DATA ");
     })
-
-    
-
   }, []);
 
   const nLinha = JSON.stringify(linha).replace(/[\\"]/g, '')
