@@ -8,6 +8,7 @@ import { DivC } from "../../components/Cartela";
 
 
 
+
 export const Game = () =>{
   const [ sorteio, setSorteio ] = useState([]);
   const [ linha, setLinha ] = useState([]);
@@ -33,14 +34,15 @@ export const Game = () =>{
   useEffect(() =>{ 
     api.get('/partida').then((response) =>{
       let tm = response.data.length -1
-        setSorteio(response.data[0].bolaSorteio);
+        setSorteio(response.data[tm].bolaSorteio);
         //setHits(response.data[tm].hits)
      // console.log(response.data[0].bolaSorteio + " SORTEIO ");
     
     })
     
     api.get('/cartela').then((response) =>{
-      setLinha(response.data[0].linhaCartela) 
+      let tm = response.data.length -1
+      setLinha(response.data[tm].linhaCartela) 
      // console.log(response.data.lentgh + " CARTELA "); 
     })
 
