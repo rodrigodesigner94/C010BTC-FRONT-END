@@ -21,7 +21,7 @@ export const NavBar = () => {
 
     api.get('/auth', config).then((response) => {
       setLogged(true);
-      setShowLogin(true);
+      setShowLogin(false);
       setUser(response.data);
     });
   }, [logged, user.firstName]);
