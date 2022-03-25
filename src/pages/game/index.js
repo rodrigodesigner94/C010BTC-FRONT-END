@@ -4,14 +4,16 @@ import { useEffect, useState } from 'react';
 import { BackgroundGame } from "../../components/Container/telaGame";
 import { Bola, Div } from "../../components/Bolas";
 import { DivC } from "../../components/Cartela";
-import  "reflect-metadata" ;
+
 
 
 
 export const Game = () =>{
   const [ sorteio, setSorteio ] = useState([]);
   const [ linha, setLinha ] = useState([]);
-  const [ deletar, setDeletar] = useState([]);
+  const [ cor, setCor ] = useState('none');
+  const [ cor2, setCor2 ] = useState('');
+  const [bMostrar, setbMostar] = useState('Mostrar Acertos');
 
    
   //DELETE PARTIDA
@@ -31,7 +33,8 @@ export const Game = () =>{
   useEffect(() =>{ 
     api.get('/partida').then((response) =>{
       let tm = response.data.length -1
-        setSorteio(response.data[tm].bolaSorteio);
+        setSorteio(response.data[0].bolaSorteio);
+        //setHits(response.data[tm].hits)
      // console.log(response.data[0].bolaSorteio + " SORTEIO ");
     
     })
@@ -49,19 +52,25 @@ export const Game = () =>{
 
   const nSorteio = JSON.stringify(sorteio).replace(/[\\"]/g, '')
   const sorteioInt = JSON.parse(nSorteio)
-  
 
+  
   const acertos = sorteioInt.filter((numero) =>
   linha1.includes(numero) 
   );
-  //console.log(linha1 + " LINHA1 " );
-  console.log(nSorteio + " nSorteio " );
-  console.log(sorteioInt + " sorteioInt " );
-  //console.log(acertos + " ACERTOS " );
-  console.log(acertos.sort((a, b) => a -b) + " ACERTOS" );
- 
   
+  const acertosOrder = acertos.sort((a, b) => a -b)
 
+  function marcar(){
+  if(cor == 'none'){
+    setCor('')
+    setCor2('none')
+    setbMostar('Mostrar Cartela')
+  }else{
+    setCor('none')
+    setCor2('')
+    setbMostar('Mostrar Acertos')
+  }
+}
   return (
     <BackgroundGame>
       <Div>
@@ -73,23 +82,31 @@ export const Game = () =>{
  
       </Div>
       <Div>
-        <DivC>
-          <table>
-            
-            <tbody>
-              
-               {
-              linha1.map((item, i) => (
-                <tr key={i}>{item}</tr>  
-                ))
 
+      <DivC style={{display: cor}}>
+          <table>
+            <tbody>
+               {
+              acertosOrder.map((item, i) => (
+                <tr key={i} style={{background: 'green'}}>{item}</tr>  
+                ))
                 }
             </tbody>
           </table>
+          <h3>{`Parabens!!! Você acertou ${acertos.sort((a, b) => a -b)}`}</h3>
         </DivC>
-        <h3>{`Parabens Você acertou ${acertos.sort((a, b) => a -b)}`}</h3>
+
+      <DivC style={{display: cor2 }}>
+          <table>
+            <tbody>
+              {linha1.map((item, i) => (
+                <tr key={i}>{item}</tr>
+                ))}
+            </tbody>
+          </table>
+        </DivC>
       </Div>
-      <button >Marcar Cartela</button>
+      <button onClick={marcar}>{bMostrar}</button>
       <a href="/cartela"><button >Voltar</button></a>
     </BackgroundGame>
   );
