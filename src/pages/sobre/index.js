@@ -150,7 +150,7 @@ export const Sobre = () => {
           <IconDiv>
             <h3>Acesse:</h3>
             <a href="https://github.com/johnicassere"><IconGit /></a>
-            <a href=""><IconLink /></a>
+            <a href="https://www.linkedin.com/in/johni-cassere/"><IconLink /></a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -165,17 +165,17 @@ export const Sobre = () => {
         </DivG>
         <DivG>
           <Image4 />
-          <h1>Rodrigo</h1>
-          <h2>Front-End</h2>
+          <h1>Valdenir</h1>
+          <h2>Back-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href=""><IconGit /></a>
-            <a href=""><IconLink /></a>
+            <a href="https://github.com/ValdenirSBrito"><IconGit /></a>
+            <a href="https://www.linkedin.com/in/valdenir-silva-brito-43b34a1bb/"><IconLink /></a>
           </IconDiv>
         </DivG>
         <DivG>
           <Image5 />
-          <h1>Rodrigo</h1>
+          <h1>Willian</h1>
           <h2>Front-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
