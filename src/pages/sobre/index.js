@@ -2,7 +2,7 @@ import styled from "styled-components";
 import imagem1 from '../../assets/felipe.jpg'
 import imagem2 from '../../assets/johni.jpg'
 import imagem3 from '../../assets/rodrigoborges.jpg'
-import imagem4 from '../../assets/rodrigoborges.jpg'
+import imagem4 from '../../assets/valdenir.png'
 import imagem5 from '../../assets/rodrigoborges.jpg'
 import { BsGithub } from 'react-icons/bs';
 import { AiFillLinkedin } from 'react-icons/ai';
