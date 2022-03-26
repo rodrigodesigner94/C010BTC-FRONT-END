@@ -16,12 +16,5 @@ export const Background = styled.div`
     align-items: center;
     justify-content: flex-start;
 
-    @media screen and (min-width: 350px) {
-        width: 400px;
-        height: 700px;
-        overflow: scroll;
-        padding: 10rem;
-      
-
-    }
+   
 `;

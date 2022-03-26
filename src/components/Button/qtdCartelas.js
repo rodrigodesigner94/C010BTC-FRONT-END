@@ -59,17 +59,7 @@ const DivD = styled.div`
     text-shadow: #2770e6 2px 2px 2px;
   }
 
-  @media screen and (min-width: 350px ) {
-    width: 10rem;
-    height: 9rem;
-    margin-left: -50px;
-    padding-right: 10px;
-    h1{
-      font-size: 20px;
-      margin-left: 15px;
-    }
  
-  }
   `
 
 export const Selecionar = () => {

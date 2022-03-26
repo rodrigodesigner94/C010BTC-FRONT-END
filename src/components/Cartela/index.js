@@ -47,14 +47,6 @@ export const DivC = styled.div`
     background-color: #8c9196;
   }
 
-  @media screen and (min-width: 350px) {
-    width: 16rem;
-    height: 23rem;
-  }
-  h4{
-    padding: 5px;
-    font-size: 16px;
-    
-  }
+  
 
 `;
