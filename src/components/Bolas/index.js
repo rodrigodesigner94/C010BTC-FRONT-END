@@ -1,3 +1,4 @@
+import React from 'react';
 import bola from '../../assets/bola.png';
 import styled from 'styled-components';
 import { Card } from 'react-bootstrap'
