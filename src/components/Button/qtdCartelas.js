@@ -15,6 +15,7 @@ const Div = styled.div`
   a{
     margin: 2rem;
   }
+
 `;
 
 const ButtonJ = styled.button`
@@ -23,6 +24,12 @@ const ButtonJ = styled.button`
   background-color: #ffffff;
   border-width: 0.8rem;
   border-radius: 1rem;
+
+  @media screen and (min-width: 350px) {
+    width: 80px;
+    height: 50px;
+    margin-top: -100px;
+  }
 `;
 
 const DivD = styled.div`
@@ -50,6 +57,18 @@ const DivD = styled.div`
   }
   h1:hover{
     text-shadow: #2770e6 2px 2px 2px;
+  }
+
+  @media screen and (min-width: 350px ) {
+    width: 10rem;
+    height: 9rem;
+    margin-left: -50px;
+    padding-right: 10px;
+    h1{
+      font-size: 20px;
+      margin-left: 15px;
+    }
+ 
   }
   `
 

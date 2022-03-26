@@ -55,6 +55,23 @@ export const DivAre = styled.div`
         height: 3.2rem;
         background-color: #8c9196;
     }
+
+    @media screen and (min-width: 350px ) {
+      width: 16rem;
+      height: 18rem;
+      .linha{
+        margin: 3px 3px 3px -9px;
+        width: 2rem;
+        height: 2rem;
+      }
+      .coluna{
+        margin: -150px 10px 10px  ;
+
+        width: 2rem;
+        height: 2rem;
+      }
+     
+    }
     
 `
 
