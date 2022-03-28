@@ -6,7 +6,7 @@ export const DivC = styled.div`
   margin: 0.8rem;
   border-radius: 1rem;
   width: 25rem;
-  height: 15rem;
+  height: 17.2rem;
   align-items: center;
   justify-content: center;
   box-shadow: 3px 3px red, 1em 1rem 0.4em #aaa742;
@@ -23,6 +23,10 @@ export const DivC = styled.div`
       justify-content: center;
       list-style: none;
     }
+    .bingo{
+      font-weight: bold;
+      color: red;
+    }
   }
 
   tr{
@@ -32,17 +36,17 @@ export const DivC = styled.div`
     background-color: #bac7db;
     padding: 0.5rem;
     margin: 0.2rem;
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     border-color: black;
     border-style: solid;
     border-width: 1px;
     font-size: larger;
   }
   tr:hover{
-    width: 4.5rem;
-    height: 4.5rem;
     background-color: #8c9196;
   }
+
+  
 
 `;

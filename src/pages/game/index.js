@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import { BackgroundGame } from "../../components/Container/telaGame";
 import { Bola, Div } from "../../components/Bolas";
 import { DivC } from "../../components/Cartela";
-import  styled  from 'styled-components';
+import { Tr } from "../../components/Bingo/Tr.bingo";
+
 
 
 
@@ -12,33 +13,23 @@ import  styled  from 'styled-components';
 export const Game = () =>{
   const [ sorteio, setSorteio ] = useState([]);
   const [ linha, setLinha ] = useState([]);
-  const [ deletar, setDeletar] = useState([]);
-
-   
-  //DELETE PARTIDA
-// useEffect(() =>{
-//   api.delete('/partida') 
-// }, [])
-
-
-//DELETE CARTELA
-// useEffect(() =>{
-// api.delete('/cartela').then((response) =>{
-// setDeletar(response.data)
-//})
-// }, [])
+  const [ cor, setCor ] = useState('');
+  const [ cor2, setCor2 ] = useState('none');
+  const [bMostrar, setbMostar] = useState('Mostrar Acertos');
 
 
   useEffect(() =>{ 
     api.get('/partida').then((response) =>{
       let tm = response.data.length -1
         setSorteio(response.data[tm].bolaSorteio);
+        //setHits(response.data[tm].hits)
      // console.log(response.data[0].bolaSorteio + " SORTEIO ");
     
     })
     
     api.get('/cartela').then((response) =>{
-      setLinha(response.data[0].linhaCartela) 
+      let tm = response.data.length -1
+      setLinha(response.data[tm].linhaCartela) 
      // console.log(response.data.lentgh + " CARTELA "); 
     })
 
@@ -50,49 +41,58 @@ export const Game = () =>{
 
   const nSorteio = JSON.stringify(sorteio).replace(/[\\"]/g, '')
   const sorteioInt = JSON.parse(nSorteio)
-  
 
+  
   const acertos = sorteioInt.filter((numero) =>
   linha1.includes(numero) 
   );
-  //console.log(linha1 + " LINHA1 " );
-  console.log(nSorteio + " nSorteio " );
-  console.log(sorteioInt + " sorteioInt " );
-  //console.log(acertos + " ACERTOS " );
-  console.log(acertos.sort((a, b) => a -b) + " ACERTOS" );
- 
   
+   const acertosOrder = acertos.sort((a, b) => a -b)
 
+  
+ const marcar = () => {
+  if(cor == ''){
+    setCor('none')
+    setCor2('')
+    setbMostar('Mostrar Cartela')
+  }else{
+    setCor('')
+    setCor2('none')
+    setbMostar('Mostrar Acertos')
+  }
+
+ }
   return (
+    <>
     <BackgroundGame>
       <Div>
-{
-    sorteioInt.map((item, i) => ( 
-      <Bola key={i}>{item}</Bola>
-    ))
- }
- 
+            {
+              sorteioInt.map((item, i) => ( 
+                <Bola key={i}>{item}</Bola>
+                ))  
+              }
       </Div>
-      <Div>
-        <DivC>
+      
+      <Div>  
+       <DivC style={{display: cor2}}>
           <table>
-            
             <tbody>
-              
                {
-              linha1.map((item, i) => (
-                <tr key={i}>{item}</tr>  
+                 acertosOrder.map((item, i) => (
+                <tr key={i} style={{background: 'green'}} >{item}</tr> 
                 ))
-
-                }
-            </tbody>
+                }  
+            </tbody> 
           </table>
-        </DivC>
-        <h3>{`Parabens Você acertou ${acertos.sort((a, b) => a -b)}`}</h3>
-      </Div>
-      <button >Marcar Cartela</button>
+          <h4>{`Parabens!!! Você acertou: ${acertos.length} Numeros => ${acertos.sort((a, b) => a -b)}`}</h4>
+         </DivC>  
+            {<Tr props={linha1} />}
+       </Div>
+      
+      <button onClick={marcar}>{bMostrar}</button>
       <a href="/cartela"><button >Voltar</button></a>
     </BackgroundGame>
+    </> 
   );
 };
               

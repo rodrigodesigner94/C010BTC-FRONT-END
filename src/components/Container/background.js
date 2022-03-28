@@ -3,6 +3,7 @@ import background from '../../assets/background.jpg';
 
 export const Background = styled.div`
     background-image: url(${background});
+    overflow: auto;
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
@@ -14,4 +15,6 @@ export const Background = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
+   
 `;
