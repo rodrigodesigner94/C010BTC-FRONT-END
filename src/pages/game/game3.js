@@ -134,7 +134,7 @@ export const Game3 = () =>{
                 }  
             </tbody> 
           </table>
-          <h4>{`Parabens!!! Você acertou: ${acertos3.length} numeros => ${acertos3.sort((a, b) => a -b)}`}</h4>
+          <h4>{`Parabens!!! Você acertou: ${acertos3.length} Numeros => ${acertos3.sort((a, b) => a -b)}`}</h4>
          </DivC>  
             {<Tr props={novalinha3} />}
        </Div>

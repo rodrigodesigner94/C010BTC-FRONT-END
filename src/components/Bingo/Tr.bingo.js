@@ -54,9 +54,7 @@ export const DivAre = styled.div`
         width: 3.2rem;
         height: 3.2rem;
         background-color: #8c9196;
-    }
-
-   
+    } 
     
 `
 
