@@ -1,10 +1,10 @@
+import api from '../../services/Api';
 import { Form, Button, Col } from "react-bootstrap";
 import { GlobalStyle } from "../../components/Global";
 import { Background } from "../../components/Container/background";
 import { FormR } from "../../components/Form";
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
 
 export const Register = () => {
   const [email, setEmail] = useState('');
@@ -30,7 +30,7 @@ export const Register = () => {
       passwordConfirmation,
     };
 
-    axios
+    api
       .post('/user', inputUser)
       .then((response) => {
         console.log(response.message);
@@ -52,6 +52,7 @@ export const Register = () => {
               type="text"
               placeholder="Digite como você quer ser chamado"
               onChange={(event) => setFirstName(event.target.value)}
+              required
             />
         </Form.Group>
 
@@ -60,7 +61,8 @@ export const Register = () => {
           <Form.Control 
             type='email' 
             placeholder='Digite um Email' 
-            onChange={(event) => setEmail(event.target.value)} 
+            onChange={(event) => setEmail(event.target.value)}
+            required
           />
         </Form.Group>
 
@@ -68,8 +70,10 @@ export const Register = () => {
           <Form.Label>Senha</Form.Label>
           <Form.Control
             type="password"
-            placeholder="Digite uma Senha"
+            minlength="6"
+            placeholder="Mínimo 6 digitos"
             onChange={(event) => setPassword(event.target.value)}
+            required
           />
         </Form.Group>
 
@@ -77,8 +81,10 @@ export const Register = () => {
           <Form.Label>Confirmar Senha</Form.Label>
           <Form.Control
             type="password"
+            minlength="6"
             placeholder="Redigite a Senha"
             onChange={(event) => setPasswordConfirmation(event.target.value)}
+            required
           />
         </Form.Group>
 
