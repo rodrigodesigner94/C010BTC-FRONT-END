@@ -16,6 +16,13 @@ export const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    if(password.length < 6){
+      alert("Senha deve ter no minimo 6 caracteres")
+      event.preventDefault();
+    }else{
+      navigate('/Login')
+    }
+
     const inputUser = {
       email,
       firstName,
@@ -31,9 +38,10 @@ export const Register = () => {
       .catch((error) => {
         console.log(error.message);
       });
-
-    navigate('/Login')
   };
+
+
+  
 
   return (
     <Background>

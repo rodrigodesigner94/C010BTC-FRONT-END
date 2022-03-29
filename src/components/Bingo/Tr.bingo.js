@@ -74,7 +74,7 @@ export const Tr = ({props, props2}) => {
 
 return(
     <>
-    <DivAre  className="area-cartela">
+    <DivAre  className="area-cartela" >
       <div className="coluna b">
           <h1>B</h1>
         { 

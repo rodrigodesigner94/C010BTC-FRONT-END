@@ -3,7 +3,7 @@ import { GlobalStyle } from "../../components/Global"
 import { Background } from "../../components/Container/background";
 import { FormL } from "../../components/Form"; 
 import { useState } from 'react';
-import axios from 'axios';
+import api from '../../services/Api';
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
@@ -19,7 +19,8 @@ export const Login = () => {
       password,
     };
 
-    axios
+    //axios
+    api
       .post('/auth', inputLogin)
       .then((response) => {
         const token = response.data.token;
