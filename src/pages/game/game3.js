@@ -88,7 +88,7 @@ export const Game3 = () =>{
               ))}  
             </tbody> 
           </table>
-          <h4>{`Parabens!!! Você acertou: ${acertos.length} numeros => ${acertos.sort((a, b) => a -b)}`}</h4>
+          <h4>{`Parabens!!! Você acertou: ${acertos.length} Numeros => ${acertos.sort((a, b) => a -b)}`}</h4>
         </DivC>  
         {<Tr props={linha1} />}
         <DivC style={{display: cor2}}>
@@ -99,7 +99,7 @@ export const Game3 = () =>{
               ))}  
             </tbody> 
           </table>
-          <h4>{`Parabens!!! Você acertou: ${acertos2.length} numeros => ${acertos2.sort((a, b) => a -b)}`}</h4>
+          <h4>{`Parabens!!! Você acertou: ${acertos2.length} Numeros => ${acertos2.sort((a, b) => a -b)}`}</h4>
         </DivC>  
         {<Tr props={novalinha2} />}
         <DivC style={{display: cor2}}>

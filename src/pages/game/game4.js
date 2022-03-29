@@ -110,7 +110,7 @@ export const Game4 = () =>{
               ))}  
             </tbody> 
           </table>
-          <h4>{`Parabens!!! Você acertou: ${acertos2.length} numeros => ${acertos2.sort((a, b) => a -b)}`}</h4>
+          <h4>{`Parabens!!! Você acertou: ${acertos2.length} Numeros => ${acertos2.sort((a, b) => a -b)}`}</h4>
         </DivC>  
         {<Tr props={novalinha2} />}
 
@@ -122,7 +122,7 @@ export const Game4 = () =>{
               ))}  
             </tbody> 
           </table>
-          <h4>{`Parabens!!! Você acertou: ${acertos3.length} numeros => ${acertos3.sort((a, b) => a -b)}`}</h4>
+          <h4>{`Parabens!!! Você acertou: ${acertos3.length} Numeros => ${acertos3.sort((a, b) => a -b)}`}</h4>
         </DivC>  
         {<Tr props={novalinha3} />}
 
@@ -134,7 +134,7 @@ export const Game4 = () =>{
               ))}  
             </tbody> 
           </table>
-          <h4>{`Parabens!!! Você acertou: ${acertos4.length} numeros => ${acertos4.sort((a, b) => a -b)}`}</h4>
+          <h4>{`Parabens!!! Você acertou: ${acertos4.length} Numeros => ${acertos4.sort((a, b) => a -b)}`}</h4>
         </DivC>  
         {<Tr props={novalinha4} />}
       </DivS>
