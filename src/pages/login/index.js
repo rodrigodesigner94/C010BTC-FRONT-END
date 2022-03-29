@@ -1,9 +1,9 @@
+import api from '../../services/Api';
 import { Form, Button } from "react-bootstrap";
 import { GlobalStyle } from "../../components/Global"
 import { Background } from "../../components/Container/background";
 import { FormL } from "../../components/Form"; 
 import { useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
@@ -19,7 +19,7 @@ export const Login = () => {
       password,
     };
 
-    axios
+    api
       .post('/auth', inputLogin)
       .then((response) => {
         const token = response.data.token;
@@ -39,7 +39,7 @@ export const Login = () => {
           <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
-            placeholder="Digite seu email"
+            placeholder="Digite seu Email"
             onChange={(event) => setEmail(event.target.value)}
             required
           />
@@ -49,7 +49,8 @@ export const Login = () => {
           <Form.Label>Senha</Form.Label>
           <Form.Control
             type="password"
-            placeholder="Digite sua senha"
+            minlength="6"
+            placeholder="Digite sua Senha"
             onChange={(event) => setPassword(event.target.value)}
             required
           />
