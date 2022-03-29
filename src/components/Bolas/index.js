@@ -1,4 +1,3 @@
-import React from 'react';
 import bola from '../../assets/bola.png';
 import styled from 'styled-components';
 import { Card } from 'react-bootstrap'
@@ -17,9 +16,7 @@ export const Bola = styled(Card)`
   margin: 0.2rem;
 
   :hover{
-    width: 3.5rem;
-    height: 3.5rem;
-    
+    transform: scale(1.1)
   }
 `;
 
@@ -29,5 +26,5 @@ export const Div = styled.div`
   margin: 1rem;
   align-items: center;
   justify-content: center;
-  max-width: 57rem;
+  max-width: 51rem;
 `;

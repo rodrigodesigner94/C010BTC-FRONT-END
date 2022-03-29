@@ -1,192 +1,147 @@
 import React from "react";
 import styled from "styled-components";
 import api from "../../services/Api";
-import { useState, useEffect } from "react";
-
+import { useEffect } from "react";
+import { Col } from "react-bootstrap";
 
 const Div = styled.div`
   display: flex;
-  height: 3rem;
   align-items: center;
-  justify-content: center;
-  padding: 12rem;
-  select{
-  }
-  a{
-    margin: 2rem;
-  }
-
+  flex-direction: column;
+  padding: 2rem;
 `;
 
-const ButtonJ = styled.button`
+const ColS = styled(Col)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem;
+  margin: 0rem;
 
-  border-color: #550000;
-  background-color: #ffffff;
-  border-width: 0.8rem;
-  border-radius: 1rem;
-
-  @media screen and (min-width: 350px) {
-    width: 80px;
-    height: 50px;
-    margin-top: -100px;
+  a{
+    text-decoration: none;
+    color: #000;
   }
 `;
 
 const DivD = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(245, 245, 245, 0.8);
-  padding: 1rem;
-  margin: 0.5rem;
-  margin-bottom: 100px;
-  margin-right: 60px;
+  margin: 2rem;
   border-radius: 1rem;
   width: 20rem;
-  height: 15rem;
-  
+  height: 12rem;
+
   h1{
-    margin-left: 75px;
     font-family: Arial, Helvetica, sans-serif;
     text-shadow: #669cf2 2px 2px 2px;
   }
 
-  a{
-    margin-top: 100px;
-    margin-bottom: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  :hover{
+    transform: scale(1.1)
   }
-  h1:hover{
-    text-shadow: #2770e6 2px 2px 2px;
-  }
-
- 
-  `
+`;
 
 export const Selecionar = () => {
-const [cartela1, setCartela1] = useState([]);
+  //DELETE PARTIDA
+  // useEffect(() =>{
+  //   api.delete('/partida') 
+  // }, [])
 
+  //DELETE CARTELA
+  // useEffect(() =>{
+  // api.delete('/cartela')
+  // }, [])
 
+  //POST PARTIDA
+  useEffect(() =>{
+    api.post('/partida', { 
+      bolaSorteio: "string",
+      hits: "string",
+      premio: "string",
+      inicio: "2022-03-22T00:29:51.261Z",
+      fim: "2022-03-22T00:29:51.261Z",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    }) 
+  }, [])
 
-//DELETE PARTIDA
-// useEffect(() =>{
-//   api.delete('/partida') 
-// }, [])
+  //POST Cartela 1
+  useEffect(() =>{
+    api.post('/cartela', { 
+        cartela: 1,
+        linhaCartela: "string",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+  }, [])
 
+  //POST Cartela 2
+  useEffect(() =>{
+    api.post('/cartela', { 
+        cartela: 2,
+        linhaCartela: "string",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+  }, [])
 
-//DELETE CARTELA
-// useEffect(() =>{
-// api.delete('/cartela')
-// }, [])
+  //POST Cartela 3
+  useEffect(() =>{
+    api.post('/cartela', { 
+        cartela: 3,
+        linhaCartela: "string",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+  }, [])
 
-//POST PARTIDA
-useEffect(() =>{
-  api.post('/partida', { 
-    bolaSorteio: "string",
-    hits: "string",
-    premio: "string",
-    inicio: "2022-03-22T00:29:51.261Z",
-    fim: "2022-03-22T00:29:51.261Z",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-  }) 
-}, [])
-
-//POST Cartela 1
-useEffect(() =>{
-  api.post('/cartela', { 
-      cartela: 1,
-      linhaCartela: "string",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-  })
-  
-}, [])
-
-//POST Cartela 2
-useEffect(() =>{
-  api.post('/cartela', { 
-      cartela: 2,
-      linhaCartela: "string",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-  })
-  
-}, [])
-
-//POST Cartela 3
-useEffect(() =>{
-  api.post('/cartela', { 
-      cartela: 3,
-      linhaCartela: "string",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-  })
-  
-}, [])
-
-
-//POST Cartela 4
-useEffect(() =>{
-  api.post('/cartela', { 
-      cartela: 4,
-      linhaCartela: "string",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-  })
-  
-}, [])
-
-
-//GET 1
-useEffect(() =>{
-  api.get('/cartela').then((response) =>{
-    setCartela1(response.data[0].linhaCartela)
-    console.log(response.data.length + " Length ");
-  })
-}, [])
-
-
-const linhaCartela1 = JSON.stringify(cartela1).replace(/[\\"]/g, '')
-const linha1 = JSON.parse(linhaCartela1)
-console.log(linha1);
-
-
+  //POST Cartela 4
+  useEffect(() =>{
+    api.post('/cartela', { 
+        cartela: 4,
+        linhaCartela: "string",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+  }, [])
 
   return(
-    <>
-    
-  <DivD>
-    <h1>1 Cartela</h1>
-    <a href="/Game" >
-        <ButtonJ>Iniciar</ButtonJ>
-      </a>
-  </DivD>
+    <Div>
+      <ColS>
+        <a href="/Game" >
+          <DivD>
+            <h1>1 Cartela</h1>
+          </DivD>
+        </a>
 
-  <DivD>
-  <h1>2 Cartela</h1>
-  <a href="/Game2">
-        <ButtonJ>Iniciar</ButtonJ>
-      </a>
-  </DivD>
+        <a href="/Game2">
+          <DivD>
+            <h1>2 Cartela</h1>
+          </DivD>
+        </a>
+      </ColS>
 
-  <DivD>
-  <h1>3 Cartela</h1>
-  <a href="/Game3">
-        <ButtonJ>Iniciar</ButtonJ>
-      </a>
-  </DivD>
+      <ColS>
+        <a href="/Game3">
+          <DivD>
+            <h1>3 Cartela</h1>
+          </DivD>
+        </a>
 
-  <DivD>
-  <h1>4 Cartela</h1>
-  <a href="/Game4">
-        <ButtonJ>Iniciar</ButtonJ>
-      </a>
-  </DivD>
-    </>
+        <a href="/Game4">
+          <DivD>
+            <h1>4 Cartela</h1>
+          </DivD>
+        </a>
+      </ColS>
+    </Div>
   )
 }

@@ -1,5 +1,13 @@
 import styled from "styled-components"
 
+export const DivS = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 60rem;
+`;
+
 export const DivC = styled.div`
   background-color: rgba(245, 245, 245, 0.8);
   padding: 0.8rem;
@@ -23,6 +31,7 @@ export const DivC = styled.div`
       justify-content: center;
       list-style: none;
     }
+
     .bingo{
       font-weight: bold;
       color: red;
@@ -43,10 +52,8 @@ export const DivC = styled.div`
     border-width: 1px;
     font-size: larger;
   }
+
   tr:hover{
     background-color: #8c9196;
   }
-
-  
-
 `;
