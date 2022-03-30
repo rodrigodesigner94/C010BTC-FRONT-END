@@ -7,14 +7,17 @@ import { DivC, DivS } from "../../components/Cartela";
 import { Tr } from "../../components/Bingo/Tr.bingo";
 import { Back } from "../../components/Button/voltar";
 
-export const Game3 = () => {
-  const [sorteio, setSorteio] = useState([]);
-  const [linha, setLinha] = useState([]);
-  const [linha2, setLinha2] = useState([]);
-  const [linha3, setLinha3] = useState([]);
-  const [cor, setCor] = useState("");
-  const [cor2, setCor2] = useState("none");
-  const [bMostrar, setbMostar] = useState("Mostrar Acertos");
+export const Game3 = () =>{
+  const [ sorteio, setSorteio ] = useState([]);
+  const [ linha, setLinha ] = useState([]);
+  const [ linha2, setLinha2 ] = useState([]);
+  const [ linha3, setLinha3 ] = useState([]);
+  const [ cor, setCor ] = useState('');
+  const [ cor2, setCor2 ] = useState('none');
+  const [bMostrar, setbMostar] = useState('Mostrar Acertos');
+  const [premio, setPremio] = useState('');
+  const [premio2, setPremio2] = useState('');
+  const [premio3, setPremio3] = useState('');
 
   useEffect(() => {
     api.get("/partida").then((response) => {
@@ -55,6 +58,38 @@ export const Game3 = () => {
   const acertosOrder2 = acertos2.sort((a, b) => a - b);
   const acertosOrder3 = acertos3.sort((a, b) => a - b);
 
+  const resposta =  `Parabens!!! Você acertou: ${acertos.length} Numeros => ${acertos.sort((a, b) => a -b)}`;
+  const resposta2 =  `Parabens!!! Você acertou: ${acertos2.length} Numeros => ${acertos2.sort((a, b) => a -b)}`;
+  const resposta3 =  `Parabens!!! Você acertou: ${acertos3.length} Numeros => ${acertos3.sort((a, b) => a -b)}`;
+  const tentativa = " Que pena Quantidade insificiente ";
+
+  useEffect(() =>{
+    
+    if(acertos.length >= 8){
+      console.log(acertos.length);
+      setPremio(resposta)
+    }else{ 
+      setPremio(tentativa)
+    }
+  }, [acertos])
+
+  useEffect(() =>{
+    if(acertos2.length >= 8){
+      setPremio2(resposta2)
+    }else{ 
+      setPremio2(tentativa)
+    }
+  }, [acertos2]);
+
+  useEffect(() =>{
+    if(acertos3.length >= 8){
+      setPremio3(resposta3)
+    }else{ 
+      setPremio3(tentativa)
+    }
+  }, [acertos3]);
+
+
   const marcar = () => {
     if (cor === "") {
       setCor("none");
@@ -83,45 +118,34 @@ export const Game3 = () => {
           <table>
             <tbody>
               {acertosOrder.map((item, i) => (
-                <tr key={i} style={{ background: "green" }}>
-                  {item}
-                </tr>
-              ))}
-            </tbody>
+                <tr key={i} style={{background: 'green'}}><td>{item}</td></tr> 
+              ))}  
+            </tbody> 
           </table>
-          <h4>{`Parabens!!! Você acertou: ${
-            acertos.length
-          } Numeros => ${acertos.sort((a, b) => a - b)}`}</h4>
-        </DivC>
+          <h4>{premio}</h4>
+        </DivC>  
         {<Tr props={linha1} />}
         <DivC style={{ display: cor2 }}>
           <table>
             <tbody>
               {acertosOrder2.map((item, i) => (
-                <tr key={i} style={{ background: "green" }}>
-                  {item}
-                </tr>
-              ))}
-            </tbody>
+                <tr key={i} style={{background: 'green'}}><td>{item}</td></tr> 
+              ))}  
+            </tbody> 
           </table>
-          <h4>{`Parabens!!! Você acertou: ${
-            acertos2.length
-          } Numeros => ${acertos2.sort((a, b) => a - b)}`}</h4>
-        </DivC>
+          <h4>{premio2}</h4>
+        </DivC>  
         {<Tr props={novalinha2} />}
         <DivC style={{ display: cor2 }}>
           <table>
             <tbody>
               {acertosOrder3.map((item, i) => (
-                <tr key={i} style={{ background: "green" }}>
-                  {item}
-                </tr>
-              ))}
-            </tbody>
+                <tr key={i} style={{background: 'green'}}><td>{item}</td></tr> 
+              ))}  
+            </tbody> 
           </table>
-          <h4>{`Parabens!!! Você acertou: ${acertos3.length} 
-          Numeros => ${acertos3.sort((a, b) => a - b)}`}</h4>
-        </DivC>
+          <h4>{premio3}</h4>
+        </DivC>  
         {<Tr props={novalinha3} />}
       </DivS>
 

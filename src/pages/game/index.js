@@ -7,12 +7,14 @@ import { DivC } from "../../components/Cartela";
 import { Tr } from "../../components/Bingo/Tr.bingo";
 import { Back } from "../../components/Button/voltar";
 
-export const Game = () => {
-  const [sorteio, setSorteio] = useState([]);
-  const [linha, setLinha] = useState([]);
-  const [cor, setCor] = useState("");
-  const [cor2, setCor2] = useState("none");
-  const [bMostrar, setbMostar] = useState("Mostrar Acertos");
+export const Game = () =>{
+  const [ sorteio, setSorteio ] = useState([]);
+  const [ linha, setLinha ] = useState([]);
+  const [ cor, setCor ] = useState('');
+  const [ cor2, setCor2 ] = useState('none');
+  const [bMostrar, setbMostar] = useState('Mostrar Acertos');
+  const [premio, setPremio] = useState('');
+
 
   useEffect(() => {
     api.get("/partida").then((response) => {
@@ -35,9 +37,21 @@ export const Game = () => {
   const nSorteio = JSON.stringify(sorteio).replace(/[\\"]/g, "");
   const sorteioInt = JSON.parse(nSorteio);
 
-  const acertos = sorteioInt.filter((numero) => linha1.includes(numero));
+  const acertos = sorteioInt.filter((numero) =>
+    linha1.includes(numero)
+  );
+  
+  const acertosOrder = acertos.sort((a, b) => a -b)
+  const resposta =  `Parabens!!! Você acertou: ${acertos.length} Numeros => ${acertos.sort((a, b) => a -b)}`;
+  const tentativa = " Que pena Quantidade insificiente ";
 
-  const acertosOrder = acertos.sort((a, b) => a - b);
+  useEffect(() =>{
+    if(acertos.length >= 8){
+      setPremio(resposta)
+    }else{ 
+      setPremio(tentativa)
+    }
+  }, [acertos])
 
   const marcar = () => {
     if (cor === "") {
@@ -63,19 +77,16 @@ export const Game = () => {
       </Div>
 
       <Div>
-        <DivC style={{ display: cor2 }}>
+        <DivC style={{display: cor2}}> 
           <table>
             <tbody>
               {acertosOrder.map((item, i) => (
-                <tr key={i} style={{ background: "green" }}>
-                  {item}
-                </tr>
-              ))}
-            </tbody>
+              <tr key={i} style={{background: 'green'}}><td>{item}</td></tr> 
+              ))}  
+            </tbody> 
           </table>
-          <h4>{`Parabens!!! Você acertou: ${acertos.length} 
-          Numeros => ${acertos.sort((a, b) => a - b)}`}</h4>
-        </DivC>
+          <h4>{premio}</h4>
+        </DivC>  
         {<Tr props={linha1} />}
       </Div>
 
