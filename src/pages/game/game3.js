@@ -44,11 +44,11 @@ export const Game3 = () => {
   const nSorteio = JSON.stringify(sorteio).replace(/[\\"]/g, '');
   const sorteioInt = JSON.parse(nSorteio);
 
-  const acertos = sorteioInt.filter((numero) => `${linha1}`.includes(numero));
+  const acertos = sorteioInt.filter((numero) => linha1.includes(numero));
 
-  const acertos2 = sorteioInt.filter((numero) => `${novalinha2}`.includes(numero));
+  const acertos2 = sorteioInt.filter((numero) => novalinha2.includes(numero));
 
-  const acertos3 = sorteioInt.filter((numero) => `${novalinha3}`.includes(numero));
+  const acertos3 = sorteioInt.filter((numero) => novalinha3.includes(numero));
 
   const acertosOrder = acertos.sort((a, b) => a - b);
   const acertosOrder2 = acertos2.sort((a, b) => a - b);
@@ -67,8 +67,8 @@ export const Game3 = () => {
 
   useEffect(() => {
     if (acertos.length >= 8) {
-      console.log(acertos.length);
       setPremio(resposta);
+      console.log(resposta);
     } else {
       setPremio(tentativa);
     }
@@ -77,6 +77,7 @@ export const Game3 = () => {
   useEffect(() => {
     if (acertos2.length >= 8) {
       setPremio2(resposta2);
+      console.log(resposta2);
     } else {
       setPremio2(tentativa);
     }
@@ -85,6 +86,7 @@ export const Game3 = () => {
   useEffect(() => {
     if (acertos3.length >= 8) {
       setPremio3(resposta3);
+      console.log(resposta3);
     } else {
       setPremio3(tentativa);
     }

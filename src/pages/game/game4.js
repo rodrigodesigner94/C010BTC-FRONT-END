@@ -51,13 +51,13 @@ export const Game4 = () => {
   const nSorteio = JSON.stringify(sorteio).replace(/[\\"]/g, '');
   const sorteioInt = JSON.parse(nSorteio);
 
-  const acertos = sorteioInt.filter((numero) => `${linha1}`.includes(numero));
+  const acertos = sorteioInt.filter((numero) => linha1.includes(numero));
 
-  const acertos2 = sorteioInt.filter((numero) => `${novalinha2}`.includes(numero));
+  const acertos2 = sorteioInt.filter((numero) => novalinha2.includes(numero));
 
-  const acertos3 = sorteioInt.filter((numero) => `${novalinha3}`.includes(numero));
+  const acertos3 = sorteioInt.filter((numero) => novalinha3.includes(numero));
 
-  const acertos4 = sorteioInt.filter((numero) => `${novalinha4}`.includes(numero));
+  const acertos4 = sorteioInt.filter((numero) => novalinha4.includes(numero));
 
   const acertosOrder = acertos.sort((a, b) => a - b);
   const acertosOrder2 = acertos2.sort((a, b) => a - b);
