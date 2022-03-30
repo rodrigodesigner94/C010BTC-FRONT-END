@@ -8,4 +8,4 @@ Já ouviu alguém contar que quando foi a Las Vegas jogou bingo? Se sua reposta 
 
 Na versão atual nossa aplicação está consumindo a <a href="https://bingoo-btc.herokuapp.com/api/">Api</a> que construimos, exibindo telas para cadastro e login de users, sorteio de numeros e axibição de cartelas (com quantidades selecionadas pelo user).
 
-<a href="https://bingo-btc-front.herokuapp.com/">Welcome to fabulous Bingo Vegas</a>
+<a href="https://bingo-btc-front.herokuapp.com/">Welcome to fabulous Vegas Bingo</a>
