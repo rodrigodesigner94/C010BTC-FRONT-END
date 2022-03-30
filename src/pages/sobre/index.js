@@ -139,8 +139,8 @@ export const Sobre = () => {
           <h2>Back-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href="https://github.com/feeee-creator"><IconGit /></a>
-            <a href="https://www.linkedin.com/in/felipe-silva-b60458210/"><IconLink /></a>
+            <a href="https://github.com/feeee-creator" target="_blank"><IconGit /></a>
+            <a href="https://www.linkedin.com/in/felipe-silva-b60458210/" target="_blank"><IconLink /></a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -149,8 +149,8 @@ export const Sobre = () => {
           <h2>Back-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href="https://github.com/johnicassere"><IconGit /></a>
-            <a href="https://www.linkedin.com/in/johni-cassere/"><IconLink /></a>
+            <a href="https://github.com/johnicassere" target="_blank"><IconGit /></a>
+            <a href="https://www.linkedin.com/in/johni-cassere/" target="_blank"><IconLink /></a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -159,8 +159,8 @@ export const Sobre = () => {
           <h2>Front-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href="https://github.com/rodrigodesigner94"><IconGit /></a>
-            <a href="https://www.linkedin.com/in/rodrigo-borges-78a359a1/"><IconLink /></a>
+            <a href="https://github.com/rodrigodesigner94" target="_blank"><IconGit /></a>
+            <a href="https://www.linkedin.com/in/rodrigo-borges-78a359a1/" target="_blank"><IconLink /></a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -169,8 +169,8 @@ export const Sobre = () => {
           <h2>Back-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href="https://github.com/ValdenirSBrito"><IconGit /></a>
-            <a href="https://www.linkedin.com/in/valdenir-silva-brito-43b34a1bb/"><IconLink /></a>
+            <a href="https://github.com/ValdenirSBrito" target="_blank"><IconGit /></a>
+            <a href="https://www.linkedin.com/in/valdenir-silva-brito-43b34a1bb/" target="_blank"><IconLink /></a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -179,8 +179,8 @@ export const Sobre = () => {
           <h2>Front-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href="https://github.com/Wilbyl"><IconGit /></a>
-            <a href="https://www.linkedin.com/in/willian-oliveira-605134145/"><IconLink /></a>
+            <a href="https://github.com/Wilbyl" target="_blank"><IconGit /></a>
+            <a href="https://www.linkedin.com/in/willian-oliveira-605134145/"target="_blank"><IconLink /></a>
           </IconDiv>
         </DivG>
       </Scrum>
