@@ -1,5 +1,5 @@
 // import React, { useState } from "react";
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const DivAre = styled.div`
   background-color: rgba(245, 245, 245, 0.8);
@@ -57,7 +57,7 @@ export const DivAre = styled.div`
 `;
 
 export const Tr = ({ props, props2 }) => {
-  props2 = "";
+  props2 = '';
 
   // const [ display, setDispaly ] = useState('');
   // const [ display2, setDispaly2 ] = useState('');
@@ -74,7 +74,7 @@ export const Tr = ({ props, props2 }) => {
         <div className="coluna b">
           <h1>B</h1>
           {linhaB.map((item, i) => (
-            <div className="linha" style={{ background: "" }} key={i}>
+            <div className="linha" style={{ background: '' }} key={i}>
               {item}
             </div>
           ))}
@@ -83,7 +83,7 @@ export const Tr = ({ props, props2 }) => {
         <div className="coluna i">
           <h1>I</h1>
           {linhaI.map((item, i) => (
-            <div className="linha" style={{ background: "" }} key={i}>
+            <div className="linha" style={{ background: '' }} key={i}>
               {item}
             </div>
           ))}
@@ -92,7 +92,7 @@ export const Tr = ({ props, props2 }) => {
         <div className="coluna n">
           <h1>N</h1>
           {linhaN.map((item, i) => (
-            <div className="linha" style={{ background: "" }} key={i}>
+            <div className="linha" style={{ background: '' }} key={i}>
               {item}
             </div>
           ))}
@@ -101,7 +101,7 @@ export const Tr = ({ props, props2 }) => {
         <div className="coluna g">
           <h1>G</h1>
           {linhaG.map((item, i) => (
-            <div className="linha" style={{ background: "" }} key={i}>
+            <div className="linha" style={{ background: '' }} key={i}>
               {item}
             </div>
           ))}
@@ -110,7 +110,7 @@ export const Tr = ({ props, props2 }) => {
         <div className="coluna o">
           <h1>O</h1>
           {linhaO.map((item, i) => (
-            <div className="linha" style={{ background: "" }} key={i}>
+            <div className="linha" style={{ background: '' }} key={i}>
               {item}
             </div>
           ))}

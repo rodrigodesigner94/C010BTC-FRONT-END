@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import imagem1 from "../../assets/felipe.jpg";
-import imagem2 from "../../assets/johni.jpg";
-import imagem3 from "../../assets/rodrigoborges.jpg";
-import imagem4 from "../../assets/valdenir.png";
-import imagem5 from "../../assets/willian.jpg";
-import { BsGithub } from "react-icons/bs";
-import { AiFillLinkedin } from "react-icons/ai";
+import styled from 'styled-components';
+import imagem1 from '../../assets/felipe.jpg';
+import imagem2 from '../../assets/johni.jpg';
+import imagem3 from '../../assets/rodrigoborges.jpg';
+import imagem4 from '../../assets/valdenir.png';
+import imagem5 from '../../assets/willian.jpg';
+import { BsGithub } from 'react-icons/bs';
+import { AiFillLinkedin } from 'react-icons/ai';
 
 const Background = styled.body`
   background-color: #335fa0;
@@ -140,8 +140,15 @@ export const Sobre = () => {
           <h2>Back-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href="https://github.com/feeee-creator" target="_blank"><IconGit /></a>
-            <a href="https://www.linkedin.com/in/felipe-silva-b60458210/" target="_blank"><IconLink /></a>
+            <a href="https://github.com/feeee-creator" target="_blank" rel="noreferrer">
+              <IconGit />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/felipe-silva-b60458210/"
+              target="_blank"
+              rel="noreferrer">
+              <IconLink />
+            </a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -150,8 +157,12 @@ export const Sobre = () => {
           <h2>Back-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href="https://github.com/johnicassere" target="_blank"><IconGit /></a>
-            <a href="https://www.linkedin.com/in/johni-cassere/" target="_blank"><IconLink /></a>
+            <a href="https://github.com/johnicassere" target="_blank" rel="noreferrer">
+              <IconGit />
+            </a>
+            <a href="https://www.linkedin.com/in/johni-cassere/" target="_blank" rel="noreferrer">
+              <IconLink />
+            </a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -160,8 +171,15 @@ export const Sobre = () => {
           <h2>Front-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href="https://github.com/rodrigodesigner94" target="_blank"><IconGit /></a>
-            <a href="https://www.linkedin.com/in/rodrigo-borges-78a359a1/" target="_blank"><IconLink /></a>
+            <a href="https://github.com/rodrigodesigner94" target="_blank" rel="noreferrer">
+              <IconGit />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/rodrigo-borges-78a359a1/"
+              target="_blank"
+              rel="noreferrer">
+              <IconLink />
+            </a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -170,8 +188,15 @@ export const Sobre = () => {
           <h2>Back-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href="https://github.com/ValdenirSBrito" target="_blank"><IconGit /></a>
-            <a href="https://www.linkedin.com/in/valdenir-silva-brito-43b34a1bb/" target="_blank"><IconLink /></a>
+            <a href="https://github.com/ValdenirSBrito" target="_blank" rel="noreferrer">
+              <IconGit />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/valdenir-silva-brito-43b34a1bb/"
+              target="_blank"
+              rel="noreferrer">
+              <IconLink />
+            </a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -180,8 +205,15 @@ export const Sobre = () => {
           <h2>Front-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href="https://github.com/Wilbyl" target="_blank"><IconGit /></a>
-            <a href="https://www.linkedin.com/in/willian-oliveira-605134145/"target="_blank"><IconLink /></a>
+            <a href="https://github.com/Wilbyl" target="_blank" rel="noreferrer">
+              <IconGit />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/willian-oliveira-605134145/"
+              target="_blank"
+              rel="noreferrer">
+              <IconLink />
+            </a>
           </IconDiv>
         </DivG>
       </Scrum>

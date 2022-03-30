@@ -1,37 +1,37 @@
-import api from "../../services/Api";
-import { Form, Button, Col } from "react-bootstrap";
-import { GlobalStyle } from "../../components/Global";
-import { Background } from "../../components/Container/background";
-import { FormR } from "../../components/Form";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import api from '../../services/Api';
+import { Form, Button, Col } from 'react-bootstrap';
+import { GlobalStyle } from '../../components/Global';
+import { Background } from '../../components/Container/background';
+import { FormR } from '../../components/Form';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const Register = () => {
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     if (password.length < 6) {
-      alert("Senha deve ter no minimo 6 caracteres");
+      alert('Senha deve ter no minimo 6 caracteres');
       event.preventDefault();
     } else {
-      navigate("/Login");
+      navigate('/Login');
     }
 
     const inputUser = {
       email,
       firstName,
       password,
-      passwordConfirmation,
+      passwordConfirmation
     };
 
     api
-      .post("/user", inputUser)
+      .post('/user', inputUser)
       .then((response) => {
         console.log(response.message);
       })

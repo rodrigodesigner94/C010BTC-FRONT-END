@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import bemVindo from "../../assets/bemVindo.png";
+import styled from 'styled-components';
+import bemVindo from '../../assets/bemVindo.png';
 
 export const PlacaBV = styled.div`
   background-image: url(${bemVindo});

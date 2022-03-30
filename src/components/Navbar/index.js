@@ -1,6 +1,6 @@
-import api from "../../services/Api";
-import { Navbar, Container, Nav } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import api from '../../services/Api';
+import { Navbar, Container, Nav } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
 
 export const NavBar = () => {
   const [user, setUser] = useState({});
@@ -16,10 +16,10 @@ export const NavBar = () => {
     }
 
     const config = {
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: `Bearer ${token}` }
     };
 
-    api.get("/auth", config).then((response) => {
+    api.get('/auth', config).then((response) => {
       setLogged(true);
       setShowLogin(false);
       setUser(response.data);

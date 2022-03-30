@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import image from "../../assets/TelaInicial.jpg";
+import styled from 'styled-components';
+import image from '../../assets/TelaInicial.jpg';
 
 export const Background = styled.div`
   width: 99vw;

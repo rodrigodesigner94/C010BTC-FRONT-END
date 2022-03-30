@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import telaGame from "../../assets/telaGame.jpg";
+import styled from 'styled-components';
+import telaGame from '../../assets/telaGame.jpg';
 
 export const BackgroundGame = styled.div`
   display: flex;

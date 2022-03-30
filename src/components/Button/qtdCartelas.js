@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import api from "../../services/Api";
-import { useEffect } from "react";
-import { Col } from "react-bootstrap";
+import React from 'react';
+import styled from 'styled-components';
+import api from '../../services/Api';
+import { useEffect } from 'react';
+import { Col } from 'react-bootstrap';
 
 const Div = styled.div`
   display: flex;
@@ -57,59 +57,59 @@ export const Selecionar = () => {
 
   // POST PARTIDA
   useEffect(() => {
-    api.post("/partida", {
-      bolaSorteio: "string",
-      hits: "string",
-      premio: "string",
-      inicio: "2022-03-22T00:29:51.261Z",
-      fim: "2022-03-22T00:29:51.261Z",
+    api.post('/partida', {
+      bolaSorteio: 'string',
+      hits: 'string',
+      premio: 'string',
+      inicio: '2022-03-22T00:29:51.261Z',
+      fim: '2022-03-22T00:29:51.261Z',
       headers: {
-        "Content-Type": "application/json",
-      },
+        'Content-Type': 'application/json'
+      }
     });
   }, []);
 
   // POST Cartela 1
   useEffect(() => {
-    api.post("/cartela", {
+    api.post('/cartela', {
       cartela: 1,
-      linhaCartela: "string",
+      linhaCartela: 'string',
       headers: {
-        "Content-Type": "application/json",
-      },
+        'Content-Type': 'application/json'
+      }
     });
   }, []);
 
   // POST Cartela 2
   useEffect(() => {
-    api.post("/cartela", {
+    api.post('/cartela', {
       cartela: 2,
-      linhaCartela: "string",
+      linhaCartela: 'string',
       headers: {
-        "Content-Type": "application/json",
-      },
+        'Content-Type': 'application/json'
+      }
     });
   }, []);
 
   // POST Cartela 3
   useEffect(() => {
-    api.post("/cartela", {
+    api.post('/cartela', {
       cartela: 3,
-      linhaCartela: "string",
+      linhaCartela: 'string',
       headers: {
-        "Content-Type": "application/json",
-      },
+        'Content-Type': 'application/json'
+      }
     });
   }, []);
 
   // POST Cartela 4
   useEffect(() => {
-    api.post("/cartela", {
+    api.post('/cartela', {
       cartela: 4,
-      linhaCartela: "string",
+      linhaCartela: 'string',
       headers: {
-        "Content-Type": "application/json",
-      },
+        'Content-Type': 'application/json'
+      }
     });
   }, []);
 

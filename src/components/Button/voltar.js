@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { TiArrowBack } from "react-icons/ti";
+import styled from 'styled-components';
+import { TiArrowBack } from 'react-icons/ti';
 
 export const Back = styled(TiArrowBack)`
   position: absolute;

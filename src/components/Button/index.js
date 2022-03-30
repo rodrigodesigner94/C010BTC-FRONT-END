@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Bola from "../../assets/bola.png";
+import styled from 'styled-components';
+import Bola from '../../assets/bola.png';
 
 export const ButtonB = styled.button`
   background-image: url(${Bola});
