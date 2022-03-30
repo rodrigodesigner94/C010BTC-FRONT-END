@@ -1,26 +1,26 @@
-import api from '../../services/Api';
+import api from "../../services/Api";
 import { Form, Button, Col } from "react-bootstrap";
 import { GlobalStyle } from "../../components/Global";
 import { Background } from "../../components/Container/background";
 import { FormR } from "../../components/Form";
-import { useState } from 'react';
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
-  const [email, setEmail] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [password, setPassword] = useState('');
-  const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if(password.length < 6){
-      alert("Senha deve ter no minimo 6 caracteres")
+    if (password.length < 6) {
+      alert("Senha deve ter no minimo 6 caracteres");
       event.preventDefault();
-    }else{
-      navigate('/Login')
+    } else {
+      navigate("/Login");
     }
 
     const inputUser = {
@@ -31,7 +31,7 @@ export const Register = () => {
     };
 
     api
-      .post('/user', inputUser)
+      .post("/user", inputUser)
       .then((response) => {
         console.log(response.message);
       })
@@ -40,27 +40,24 @@ export const Register = () => {
       });
   };
 
-
-  
-
   return (
     <Background>
       <FormR onSubmit={handleSubmit}>
         <Form.Group className="mb-3" as={Col}>
           <Form.Label>Nome ou apelido</Form.Label>
           <Form.Control
-              type="text"
-              placeholder="Digite como você quer ser chamado"
-              onChange={(event) => setFirstName(event.target.value)}
-              required
-            />
+            type="text"
+            placeholder="Digite como você quer ser chamado"
+            onChange={(event) => setFirstName(event.target.value)}
+            required
+          />
         </Form.Group>
 
         <Form.Group className="mb-3" as={Col}>
           <Form.Label>E-Mail</Form.Label>
-          <Form.Control 
-            type='email' 
-            placeholder='Digite um Email' 
+          <Form.Control
+            type="email"
+            placeholder="Digite um Email"
             onChange={(event) => setEmail(event.target.value)}
             required
           />
@@ -91,7 +88,7 @@ export const Register = () => {
         <Button variant="primary" type="submit">
           Criar Conta
         </Button>
-        <GlobalStyle/>
+        <GlobalStyle />
       </FormR>
     </Background>
   );

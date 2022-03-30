@@ -1,14 +1,14 @@
-import api from '../../services/Api';
+import api from "../../services/Api";
 import { Form, Button } from "react-bootstrap";
-import { GlobalStyle } from "../../components/Global"
+import { GlobalStyle } from "../../components/Global";
 import { Background } from "../../components/Container/background";
-import { FormL } from "../../components/Form"; 
-import { useState } from 'react';
+import { FormL } from "../../components/Form";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -20,16 +20,16 @@ export const Login = () => {
     };
 
     api
-      .post('/auth', inputLogin)
+      .post("/auth", inputLogin)
       .then((response) => {
         const token = response.data.token;
-        localStorage.setItem('token', token);
+        localStorage.setItem("token", token);
       })
       .catch((error) => {
         console.log(error.message);
       });
 
-    navigate('/');
+    navigate("/");
   };
 
   return (
@@ -55,11 +55,11 @@ export const Login = () => {
             required
           />
         </Form.Group>
-        
+
         <Button variant="primary" type="submit">
           Entrar
         </Button>
-        <GlobalStyle/>
+        <GlobalStyle />
       </FormL>
     </Background>
   );

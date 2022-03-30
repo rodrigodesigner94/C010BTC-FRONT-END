@@ -18,7 +18,7 @@ const ColS = styled(Col)`
   padding: 0rem;
   margin: 0rem;
 
-  a{
+  a {
     text-decoration: none;
     color: #000;
   }
@@ -34,89 +34,89 @@ const DivD = styled.div`
   width: 20rem;
   height: 12rem;
 
-  h1{
+  h1 {
     font-family: Arial, Helvetica, sans-serif;
     text-shadow: #669cf2 2px 2px 2px;
   }
 
-  :hover{
-    transform: scale(1.1)
+  :hover {
+    transform: scale(1.1);
   }
 `;
 
 export const Selecionar = () => {
-  //DELETE PARTIDA
+  // DELETE PARTIDA
   // useEffect(() =>{
-  //   api.delete('/partida') 
+  //   api.delete('/partida')
   // }, [])
 
-  //DELETE CARTELA
+  // DELETE CARTELA
   // useEffect(() =>{
   // api.delete('/cartela')
   // }, [])
 
-  //POST PARTIDA
-  useEffect(() =>{
-    api.post('/partida', { 
+  // POST PARTIDA
+  useEffect(() => {
+    api.post("/partida", {
       bolaSorteio: "string",
       hits: "string",
       premio: "string",
       inicio: "2022-03-22T00:29:51.261Z",
       fim: "2022-03-22T00:29:51.261Z",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-    }) 
-  }, [])
+    });
+  }, []);
 
-  //POST Cartela 1
-  useEffect(() =>{
-    api.post('/cartela', { 
-        cartela: 1,
-        linhaCartela: "string",
+  // POST Cartela 1
+  useEffect(() => {
+    api.post("/cartela", {
+      cartela: 1,
+      linhaCartela: "string",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-    })
-  }, [])
+    });
+  }, []);
 
-  //POST Cartela 2
-  useEffect(() =>{
-    api.post('/cartela', { 
-        cartela: 2,
-        linhaCartela: "string",
+  // POST Cartela 2
+  useEffect(() => {
+    api.post("/cartela", {
+      cartela: 2,
+      linhaCartela: "string",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-    })
-  }, [])
+    });
+  }, []);
 
-  //POST Cartela 3
-  useEffect(() =>{
-    api.post('/cartela', { 
-        cartela: 3,
-        linhaCartela: "string",
+  // POST Cartela 3
+  useEffect(() => {
+    api.post("/cartela", {
+      cartela: 3,
+      linhaCartela: "string",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-    })
-  }, [])
+    });
+  }, []);
 
-  //POST Cartela 4
-  useEffect(() =>{
-    api.post('/cartela', { 
-        cartela: 4,
-        linhaCartela: "string",
+  // POST Cartela 4
+  useEffect(() => {
+    api.post("/cartela", {
+      cartela: 4,
+      linhaCartela: "string",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-    })
-  }, [])
+    });
+  }, []);
 
-  return(
+  return (
     <Div>
       <ColS>
-        <a href="/Game" >
+        <a href="/Game">
           <DivD>
             <h1>1 Cartela</h1>
           </DivD>
@@ -143,5 +143,5 @@ export const Selecionar = () => {
         </a>
       </ColS>
     </Div>
-  )
-}
+  );
+};

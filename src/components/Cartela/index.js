@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const DivS = styled.div`
   display: flex;
@@ -19,12 +19,12 @@ export const DivC = styled.div`
   justify-content: center;
   box-shadow: 3px 3px red, 1em 1rem 0.4em #aaa742;
 
-  table{
+  table {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    tbody{
+    tbody {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -32,13 +32,13 @@ export const DivC = styled.div`
       list-style: none;
     }
 
-    .bingo{
+    .bingo {
       font-weight: bold;
       color: red;
     }
   }
 
-  tr{
+  tr {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,7 +53,7 @@ export const DivC = styled.div`
     font-size: larger;
   }
 
-  tr:hover{
+  tr:hover {
     background-color: #8c9196;
   }
 `;

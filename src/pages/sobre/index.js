@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import imagem1 from '../../assets/felipe.jpg'
-import imagem2 from '../../assets/johni.jpg'
-import imagem3 from '../../assets/rodrigoborges.jpg'
-import imagem4 from '../../assets/valdenir.png'
-import imagem5 from '../../assets/rodrigoborges.jpg'
-import { BsGithub } from 'react-icons/bs';
-import { AiFillLinkedin } from 'react-icons/ai';
+import imagem1 from "../../assets/felipe.jpg";
+import imagem2 from "../../assets/johni.jpg";
+import imagem3 from "../../assets/rodrigoborges.jpg";
+import imagem4 from "../../assets/valdenir.png";
+import imagem5 from "../../assets/willian.jpg";
+import { BsGithub } from "react-icons/bs";
+import { AiFillLinkedin } from "react-icons/ai";
 
 const Background = styled.body`
-  background-color: #335FA0;
+  background-color: #335fa0;
 `;
 
 const Scrum = styled.div`
@@ -90,7 +90,8 @@ const DivG = styled.div`
   flex-direction: column;
   box-shadow: 5px 5px 5px black;
 
-  h1, h2{
+  h1,
+  h2 {
     padding: 0.2rem;
   }
 `;
@@ -100,11 +101,11 @@ const IconDiv = styled.div`
   align-items: center;
   padding: 2px;
 
-  a{
+  a {
     color: black;
   }
 
-  h3{
+  h3 {
     padding: 1rem;
   }
 `;
@@ -114,8 +115,8 @@ const IconGit = styled(BsGithub)`
   height: 3.5rem;
   margin: 5px;
 
-  :hover{
-    transform: scale(1.1)
+  :hover {
+    transform: scale(1.1);
   }
 `;
 
@@ -124,13 +125,13 @@ const IconLink = styled(AiFillLinkedin)`
   height: 4rem;
   margin: 5px;
 
-  :hover{
-    transform: scale(1.1)
+  :hover {
+    transform: scale(1.1);
   }
 `;
 
 export const Sobre = () => {
-  return(
+  return (
     <Background>
       <Scrum>
         <DivG>
@@ -139,8 +140,12 @@ export const Sobre = () => {
           <h2>Back-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href="https://github.com/feeee-creator"><IconGit /></a>
-            <a href="https://www.linkedin.com/in/felipe-silva-b60458210/"><IconLink /></a>
+            <a href="https://github.com/feeee-creator">
+              <IconGit />
+            </a>
+            <a href="https://www.linkedin.com/in/felipe-silva-b60458210/">
+              <IconLink />
+            </a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -149,8 +154,12 @@ export const Sobre = () => {
           <h2>Back-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href="https://github.com/johnicassere"><IconGit /></a>
-            <a href="https://www.linkedin.com/in/johni-cassere/"><IconLink /></a>
+            <a href="https://github.com/johnicassere">
+              <IconGit />
+            </a>
+            <a href="https://www.linkedin.com/in/johni-cassere/">
+              <IconLink />
+            </a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -159,8 +168,12 @@ export const Sobre = () => {
           <h2>Front-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href="https://github.com/rodrigodesigner94"><IconGit /></a>
-            <a href="https://www.linkedin.com/in/rodrigo-borges-78a359a1/"><IconLink /></a>
+            <a href="https://github.com/rodrigodesigner94">
+              <IconGit />
+            </a>
+            <a href="https://www.linkedin.com/in/rodrigo-borges-78a359a1/">
+              <IconLink />
+            </a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -169,8 +182,12 @@ export const Sobre = () => {
           <h2>Back-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href="https://github.com/ValdenirSBrito"><IconGit /></a>
-            <a href="https://www.linkedin.com/in/valdenir-silva-brito-43b34a1bb/"><IconLink /></a>
+            <a href="https://github.com/ValdenirSBrito">
+              <IconGit />
+            </a>
+            <a href="https://www.linkedin.com/in/valdenir-silva-brito-43b34a1bb/">
+              <IconLink />
+            </a>
           </IconDiv>
         </DivG>
         <DivG>
@@ -179,11 +196,15 @@ export const Sobre = () => {
           <h2>Front-End</h2>
           <IconDiv>
             <h3>Acesse:</h3>
-            <a href="https://github.com/Wilbyl"><IconGit /></a>
-            <a href="https://www.linkedin.com/in/willian-oliveira-605134145/"><IconLink /></a>
+            <a href="https://github.com/Wilbyl">
+              <IconGit />
+            </a>
+            <a href="https://www.linkedin.com/in/willian-oliveira-605134145/">
+              <IconLink />
+            </a>
           </IconDiv>
         </DivG>
       </Scrum>
     </Background>
-  )
-}
+  );
+};

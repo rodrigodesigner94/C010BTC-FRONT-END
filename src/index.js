@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import axios from 'axios';
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import { NavBar } from "../src/components/Navbar";
@@ -14,8 +14,8 @@ import { Game4 } from "./pages/game/game4";
 import { Cartela } from "./pages/selecao";
 import { Sobre } from "./pages/sobre";
 
-axios.defaults.baseURL = 'https://bingoo-btc.herokuapp.com';
-axios.defaults.headers.post['Content-Type'] = 'application/json';
+axios.defaults.baseURL = "https://bingoo-btc.herokuapp.com";
+axios.defaults.headers.post["Content-Type"] = "application/json";
 
 ReactDOM.render(
   <React.StrictMode>

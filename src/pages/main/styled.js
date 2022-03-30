@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import image from '../../assets/TelaInicial.jpg';
+import image from "../../assets/TelaInicial.jpg";
 
 export const Background = styled.div`
   width: 99vw;
@@ -9,7 +9,7 @@ export const Background = styled.div`
   background-size: cover;
   background-attachment: fixed;
   display: flex;
-  flex-direction: column ;
+  flex-direction: column;
   justify-content: center;
-  align-items: center ;
+  align-items: center;
 `;

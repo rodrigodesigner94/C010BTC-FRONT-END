@@ -1,6 +1,6 @@
-import bola from '../../assets/bola.png';
-import styled from 'styled-components';
-import { Card } from 'react-bootstrap'
+import bola from "../../assets/bola.png";
+import styled from "styled-components";
+import { Card } from "react-bootstrap";
 
 export const Bola = styled(Card)`
   display: flex;
@@ -15,8 +15,8 @@ export const Bola = styled(Card)`
   border: none;
   margin: 0.2rem;
 
-  :hover{
-    transform: scale(1.1)
+  :hover {
+    transform: scale(1.1);
   }
 `;
 

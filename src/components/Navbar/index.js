@@ -1,6 +1,6 @@
-import api from '../../services/Api';
+import api from "../../services/Api";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export const NavBar = () => {
   const [user, setUser] = useState({});
@@ -19,14 +19,14 @@ export const NavBar = () => {
       headers: { Authorization: `Bearer ${token}` },
     };
 
-    api.get('/auth', config).then((response) => {
+    api.get("/auth", config).then((response) => {
       setLogged(true);
       setShowLogin(false);
       setUser(response.data);
     });
   }, [logged, user.firstName]);
 
-  return(
+  return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand href="/">Vegas Bingo</Navbar.Brand>

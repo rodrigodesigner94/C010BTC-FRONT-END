@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { TiArrowBack } from 'react-icons/ti';
+import styled from "styled-components";
+import { TiArrowBack } from "react-icons/ti";
 
 export const Back = styled(TiArrowBack)`
   position: absolute;
@@ -7,8 +7,8 @@ export const Back = styled(TiArrowBack)`
   left: 2rem;
   width: 4rem;
   height: 4rem;
-  
-  :hover{ 
+
+  :hover {
     transform: scale(1.1);
   }
 `;

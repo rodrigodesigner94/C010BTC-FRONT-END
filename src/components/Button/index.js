@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Bola from '../../assets/bola.png';
+import styled from "styled-components";
+import Bola from "../../assets/bola.png";
 
 export const ButtonB = styled.button`
   background-image: url(${Bola});
@@ -11,7 +11,7 @@ export const ButtonB = styled.button`
   border: none;
   font-size: large;
 
-  :hover{
-    transform: scale(1.1)
+  :hover {
+    transform: scale(1.1);
   }
 `;
