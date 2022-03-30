@@ -16,6 +16,11 @@ export const Game4 = () =>{
   const [ cor, setCor ] = useState('');
   const [ cor2, setCor2 ] = useState('none');
   const [bMostrar, setbMostar] = useState('Mostrar Acertos');
+  const [premio, setPremio] = useState('');
+  const [premio2, setPremio2] = useState('');
+  const [premio3, setPremio3] = useState('');
+  const [premio4, setPremio4] = useState('');
+  
 
   useEffect(() =>{ 
     api.get('/partida').then((response) =>{
@@ -68,6 +73,46 @@ export const Game4 = () =>{
   const acertosOrder3 = acertos3.sort((a, b) => a -b)
   const acertosOrder4 = acertos4.sort((a, b) => a -b)
 
+   
+  const resposta =  `Parabens!!! Você acertou: ${acertos.length} Numeros => ${acertos.sort((a, b) => a -b)}`;
+  const resposta2 =  `Parabens!!! Você acertou: ${acertos2.length} Numeros => ${acertos2.sort((a, b) => a -b)}`;
+  const resposta3 =  `Parabens!!! Você acertou: ${acertos3.length} Numeros => ${acertos3.sort((a, b) => a -b)}`;
+  const resposta4 =  `Parabens!!! Você acertou: ${acertos4.length} Numeros => ${acertos4.sort((a, b) => a -b)}`;
+  const tentativa = " Que pena Quantidade insificiente ";
+
+  useEffect(() =>{
+    if(acertos.length >= 8){
+      setPremio(resposta)
+    }else{ 
+      setPremio(tentativa)
+    }
+  }, [acertos])
+
+  useEffect(() =>{
+  if(acertos2.length >= 8){
+    setPremio2(resposta2)
+  }else{ 
+    setPremio2(tentativa)
+  }
+}, [acertos2])
+
+useEffect(() =>{
+if(acertos3.length >= 8){
+  setPremio3(resposta3)
+}else{ 
+  setPremio3(tentativa)
+}
+}, [acertos3])
+
+useEffect(() =>{
+if(acertos4.length >= 8){
+  setPremio4(resposta4)
+}else{ 
+  setPremio4(tentativa)
+}
+}, [acertos4])
+
+
   const marcar = () => {
     if(cor === ''){
       setCor('none')
@@ -94,11 +139,11 @@ export const Game4 = () =>{
           <table>
             <tbody>
               {acertosOrder.map((item, i) => (
-                <tr key={i} style={{background: 'green'}} >{item}</tr> 
+                <tr key={i} style={{background: 'green'}}><td>{item}</td></tr> 
               ))}  
             </tbody> 
           </table>
-          <h4>{`Parabens!!! Você acertou: ${acertos.length} Numeros => ${acertos.sort((a, b) => a -b)}`}</h4>
+          <h4>{premio}</h4>
         </DivC>
         {<Tr props={linha1} />}
 
@@ -106,11 +151,11 @@ export const Game4 = () =>{
           <table>
             <tbody>
               {acertosOrder2.map((item, i) => (
-                <tr key={i} style={{background: 'green'}} >{item}</tr> 
+                <tr key={i} style={{background: 'green'}}><td>{item}</td></tr> 
               ))}  
             </tbody> 
           </table>
-          <h4>{`Parabens!!! Você acertou: ${acertos2.length} Numeros => ${acertos2.sort((a, b) => a -b)}`}</h4>
+          <h4>{premio2}</h4>
         </DivC>  
         {<Tr props={novalinha2} />}
 
@@ -118,11 +163,11 @@ export const Game4 = () =>{
           <table>
             <tbody>
               {acertosOrder3.map((item, i) => (
-                <tr key={i} style={{background: 'green'}} >{item}</tr> 
+                <tr key={i} style={{background: 'green'}}><td>{item}</td></tr> 
               ))}  
             </tbody> 
           </table>
-          <h4>{`Parabens!!! Você acertou: ${acertos3.length} Numeros => ${acertos3.sort((a, b) => a -b)}`}</h4>
+          <h4>{premio3}</h4>
         </DivC>  
         {<Tr props={novalinha3} />}
 
@@ -130,11 +175,11 @@ export const Game4 = () =>{
           <table>
             <tbody>
               {acertosOrder4.map((item, i) => (
-                <tr key={i} style={{background: 'green'}} >{item}</tr> 
+                <tr key={i} style={{background: 'green'}}><td>{item}</td></tr> 
               ))}  
             </tbody> 
           </table>
-          <h4>{`Parabens!!! Você acertou: ${acertos4.length} Numeros => ${acertos4.sort((a, b) => a -b)}`}</h4>
+          <h4>{premio4}</h4>
         </DivC>  
         {<Tr props={novalinha4} />}
       </DivS>
