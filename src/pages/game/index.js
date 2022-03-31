@@ -100,11 +100,10 @@ export const Game = () => {
               ))}
             </tbody>
           </table>
-          
           {trofeu && <Trofeu></Trofeu>}
           {taca && <Taca></Taca>}
           {medalha && <Medalha></Medalha>}
-          <p>Parabens!!! Você acertou: {acertos.length}</p>
+          <p>Parabens!! Você acertou: {acertos.length}</p>
         </DivC>
         {<Tr props={linha1} />}
       </Div>
