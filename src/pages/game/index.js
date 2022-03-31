@@ -25,8 +25,9 @@ export const Game = () => {
 
     api.get('/cartela').then((response) => {
       const tm = response.data.length - 1;
+      console.log(tm);
       setLinha(response.data[tm].linhaCartela);
-      // console.log(response.data.lentgh + " CARTELA ");
+       console.log(response.data.lentgh + " CARTELA ");
     });
   }, []);
 
@@ -79,6 +80,7 @@ export const Game = () => {
         <DivC style={{ display: cor2 }}>
           <table>
             <tbody>
+              
               {acertosOrder.map((item, i) => (
                 <tr key={i} style={{ background: 'green' }}>
                   <td>{item}</td>
