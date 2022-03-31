@@ -78,11 +78,11 @@ export const Game4 = () => {
       setTrofeu(true);
       setMedalha(false);
       setTaca(false);
-    } else if (acertos.length >= 6 && acertos.length <= 14) {
+    } else if (acertos.length >= 9 && acertos.length <= 14) {
       setTaca(true);
       setTrofeu(false);
       setMedalha(false);
-    } else if (acertos.length <= 5) {
+    } else if (acertos.length <= 8) {
       setMedalha(true);
       setTaca(false);
       setTrofeu(false);
@@ -92,11 +92,11 @@ export const Game4 = () => {
       setTrofeu2(true);
       setMedalha2(false);
       setTaca2(false);
-    } else if (acertos.length >= 6 && acertos.length <= 14) {
+    } else if (acertos2.length >= 9 && acertos.length <= 14) {
       setTaca2(true);
       setTrofeu2(false);
       setMedalha2(false);
-    } else if (acertos.length <= 5) {
+    } else if (acertos2.length <= 8) {
       setMedalha2(true);
       setTaca2(false);
       setTrofeu2(false);
@@ -106,11 +106,11 @@ export const Game4 = () => {
       setTrofeu3(true);
       setMedalha3(false);
       setTaca3(false);
-    } else if (acertos.length >= 6 && acertos.length <= 14) {
+    } else if (acertos3.length >= 9 && acertos.length <= 14) {
       setTaca3(true);
       setTrofeu3(false);
       setMedalha3(false);
-    } else if (acertos.length <= 5) {
+    } else if (acertos3.length <= 8) {
       setMedalha3(true);
       setTaca3(false);
       setTrofeu3(false);
@@ -120,11 +120,11 @@ export const Game4 = () => {
       setTrofeu4(true);
       setMedalha4(false);
       setTaca4(false);
-    } else if (acertos.length >= 6 && acertos.length <= 14) {
+    } else if (acertos4.length >= 9 && acertos.length <= 14) {
       setTaca4(true);
       setTrofeu4(false);
       setMedalha4(false);
-    } else if (acertos.length <= 5) {
+    } else if (acertos4.length <= 8) {
       setMedalha4(true);
       setTaca4(false);
       setTrofeu4(false);
