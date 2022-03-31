@@ -143,7 +143,7 @@ export const Game3 = () => {
             {trofeu && <Trofeu></Trofeu>}
             {taca && <Taca></Taca>}
             {medalha && <Medalha></Medalha>}
-            <p>Parabens!! Você acertou: {acertos2.length}</p>
+            <p>Parabens!! Você acertou: {acertos.length}</p>
           </DivCS>
         </DivC>
         {<Tr props={linha1} />}
@@ -181,7 +181,7 @@ export const Game3 = () => {
             {trofeu3 && <Trofeu></Trofeu>}
             {taca3 && <Taca></Taca>}
             {medalha3 && <Medalha></Medalha>}
-            <p>Parabens!! Você acertou: {acertos2.length}</p>
+            <p>Parabens!! Você acertou: {acertos3.length}</p>
           </DivCS>
         </DivC>
         {<Tr props={novalinha3} />}

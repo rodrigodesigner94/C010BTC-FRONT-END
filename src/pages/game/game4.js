@@ -3,9 +3,10 @@ import api from '../../services/Api';
 import { useEffect, useState } from 'react';
 import { BackgroundGame } from '../../components/Container/telaGame';
 import { Bola, Div } from '../../components/Bolas';
-import { DivC, DivS } from '../../components/Cartela';
+import { DivC, DivS, DivCS } from '../../components/Cartela';
 import { Tr } from '../../components/Bingo/Tr.bingo';
 import { Back, Show } from '../../components/Button/selectButtons';
+import { Taca, Medalha, Trofeu } from '../../components/premios';
 
 export const Game4 = () => {
   const [sorteio, setSorteio] = useState([]);
@@ -16,10 +17,18 @@ export const Game4 = () => {
   const [cor, setCor] = useState('');
   const [cor2, setCor2] = useState('none');
   const [bMostrar, setbMostar] = useState('Mostrar Acertos');
-  const [premio, setPremio] = useState('');
-  const [premio2, setPremio2] = useState('');
-  const [premio3, setPremio3] = useState('');
-  const [premio4, setPremio4] = useState('');
+  const [trofeu, setTrofeu] = useState('');
+  const [taca, setTaca] = useState('');
+  const [medalha, setMedalha] = useState('');
+  const [trofeu2, setTrofeu2] = useState('');
+  const [taca2, setTaca2] = useState('');
+  const [medalha2, setMedalha2] = useState('');
+  const [trofeu3, setTrofeu3] = useState('');
+  const [taca3, setTaca3] = useState('');
+  const [medalha3, setMedalha3] = useState('');
+  const [trofeu4, setTrofeu4] = useState('');
+  const [taca4, setTaca4] = useState('');
+  const [medalha4, setMedalha4] = useState('');
 
   useEffect(() => {
     api.get('/partida').then((response) => {
@@ -64,43 +73,61 @@ export const Game4 = () => {
   const acertosOrder3 = acertos3.sort((a, b) => a - b);
   const acertosOrder4 = acertos4.sort((a, b) => a - b);
 
-  const resposta = `Parabens!!! Você acertou: ${acertos.length} Numeros => ${acertos.sort(
-    (a, b) => a - b
-  )}`;
-  const resposta2 = `Parabens!!! Você acertou: ${acertos2.length} Numeros => ${acertos2.sort(
-    (a, b) => a - b
-  )}`;
-  const resposta3 = `Parabens!!! Você acertou: ${acertos3.length} Numeros => ${acertos3.sort(
-    (a, b) => a - b
-  )}`;
-  const resposta4 = `Parabens!!! Você acertou: ${acertos4.length} Numeros => ${acertos4.sort(
-    (a, b) => a - b
-  )}`;
-  const tentativa = ' Que pena Quantidade insificiente ';
-
   useEffect(() => {
-    if (acertos.length >= 8) {
-      setPremio(resposta);
-    } else {
-      setPremio(tentativa);
+    if (acertos.length == 15) {
+      setTrofeu(true);
+      setMedalha(false);
+      setTaca(false);
+    } else if (acertos.length >= 6 && acertos.length <= 14) {
+      setTaca(true);
+      setTrofeu(false);
+      setMedalha(false);
+    } else if (acertos.length <= 5) {
+      setMedalha(true);
+      setTaca(false);
+      setTrofeu(false);
     }
 
-    if (acertos2.length >= 8) {
-      setPremio2(resposta2);
-    } else {
-      setPremio2(tentativa);
+    if (acertos2.length == 15) {
+      setTrofeu2(true);
+      setMedalha2(false);
+      setTaca2(false);
+    } else if (acertos.length >= 6 && acertos.length <= 14) {
+      setTaca2(true);
+      setTrofeu2(false);
+      setMedalha2(false);
+    } else if (acertos.length <= 5) {
+      setMedalha2(true);
+      setTaca2(false);
+      setTrofeu2(false);
     }
 
-    if (acertos3.length >= 8) {
-      setPremio3(resposta3);
-    } else {
-      setPremio3(tentativa);
+    if (acertos3.length == 15) {
+      setTrofeu3(true);
+      setMedalha3(false);
+      setTaca3(false);
+    } else if (acertos.length >= 6 && acertos.length <= 14) {
+      setTaca3(true);
+      setTrofeu3(false);
+      setMedalha3(false);
+    } else if (acertos.length <= 5) {
+      setMedalha3(true);
+      setTaca3(false);
+      setTrofeu3(false);
     }
 
-    if (acertos4.length >= 8) {
-      setPremio4(resposta4);
-    } else {
-      setPremio4(tentativa);
+    if (acertos4.length == 15) {
+      setTrofeu4(true);
+      setMedalha4(false);
+      setTaca4(false);
+    } else if (acertos.length >= 6 && acertos.length <= 14) {
+      setTaca4(true);
+      setTrofeu4(false);
+      setMedalha4(false);
+    } else if (acertos.length <= 5) {
+      setMedalha4(true);
+      setTaca4(false);
+      setTrofeu4(false);
     }
   }, [acertos, acertos2, acertos3, acertos4]);
 
@@ -138,7 +165,12 @@ export const Game4 = () => {
               ))}
             </tbody>
           </table>
-          <h4>{premio}</h4>
+          <DivCS>
+            {trofeu && <Trofeu></Trofeu>}
+            {taca && <Taca></Taca>}
+            {medalha && <Medalha></Medalha>}
+            <p>Parabens!! Você acertou: {acertos.length}</p>
+          </DivCS>
         </DivC>
         {<Tr props={linha1} />}
 
@@ -152,7 +184,12 @@ export const Game4 = () => {
               ))}
             </tbody>
           </table>
-          <h4>{premio2}</h4>
+          <DivCS>
+            {trofeu2 && <Trofeu></Trofeu>}
+            {taca2 && <Taca></Taca>}
+            {medalha2 && <Medalha></Medalha>}
+            <p>Parabens!! Você acertou: {acertos2.length}</p>
+          </DivCS>
         </DivC>
         {<Tr props={novalinha2} />}
 
@@ -166,7 +203,12 @@ export const Game4 = () => {
               ))}
             </tbody>
           </table>
-          <h4>{premio3}</h4>
+          <DivCS>
+            {trofeu3 && <Trofeu></Trofeu>}
+            {taca3 && <Taca></Taca>}
+            {medalha3 && <Medalha></Medalha>}
+            <p>Parabens!! Você acertou: {acertos3.length}</p>
+          </DivCS>
         </DivC>
         {<Tr props={novalinha3} />}
 
@@ -180,7 +222,12 @@ export const Game4 = () => {
               ))}
             </tbody>
           </table>
-          <h4>{premio4}</h4>
+          <DivCS>
+            {trofeu4 && <Trofeu></Trofeu>}
+            {taca4 && <Taca></Taca>}
+            {medalha4 && <Medalha></Medalha>}
+            <p>Parabens!! Você acertou: {acertos4.length}</p>
+          </DivCS>
         </DivC>
         {<Tr props={novalinha4} />}
       </DivS>

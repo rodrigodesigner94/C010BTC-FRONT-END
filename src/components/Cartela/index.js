@@ -17,7 +17,6 @@ export const DivCS = styled.div`
   p {
     padding: 1rem;
     font-weight: bold;
-  
   }
 `;
 
