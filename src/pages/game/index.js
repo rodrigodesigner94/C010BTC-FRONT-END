@@ -55,11 +55,11 @@ export const Game = () => {
       setTrofeu(true);
       setMedalha(false);
       setTaca(false);
-    } else if (acertos.length >= 6 && acertos.length <= 10) {
+    } else if (acertos.length >= 9 && acertos.length <= 13) {
       setTaca(true);
       setTrofeu(false);
       setMedalha(false);
-    } else if (acertos.length <= 5) {
+    } else if (acertos.length <= 8) {
       setMedalha(true);
       setTaca(false);
       setTrofeu(false);
