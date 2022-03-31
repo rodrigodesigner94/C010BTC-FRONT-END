@@ -8,13 +8,24 @@ export const DivS = styled.div`
   max-width: 60rem;
 `;
 
+export const DivCS = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  p {
+    padding: 1rem;
+  }
+`;
+
 export const DivC = styled.div`
   background-color: rgba(245, 245, 245, 0.8);
-  padding: 0.8rem;
+  padding: 1rem;
   margin: 0.8rem;
   border-radius: 1rem;
   width: 23rem;
-  height: 18rem;
+  height: 17rem;
   box-shadow: 3px 3px red, 1em 1rem 0.4em #aaa742;
 
   table {

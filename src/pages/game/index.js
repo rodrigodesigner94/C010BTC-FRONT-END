@@ -3,7 +3,7 @@ import api from '../../services/Api';
 import { useEffect, useState } from 'react';
 import { BackgroundGame } from '../../components/Container/telaGame';
 import { Bola, Div } from '../../components/Bolas';
-import { DivC } from '../../components/Cartela';
+import { DivC, DivCS } from '../../components/Cartela';
 import { Tr } from '../../components/Bingo/Tr.bingo';
 import { Back, Show } from '../../components/Button/selectButtons';
 import { Taca, Medalha, Trofeu } from '../../components/premios';
@@ -100,10 +100,12 @@ export const Game = () => {
               ))}
             </tbody>
           </table>
-          {trofeu && <Trofeu></Trofeu>}
-          {taca && <Taca></Taca>}
-          {medalha && <Medalha></Medalha>}
-          <p>Parabens!! Você acertou: {acertos.length}</p>
+          <DivCS>
+            {trofeu && <Trofeu></Trofeu>}
+            {taca && <Taca></Taca>}
+            {medalha && <Medalha></Medalha>}
+            <p>Parabens!! Você acertou: {acertos.length}</p>
+          </DivCS>
         </DivC>
         {<Tr props={linha1} />}
       </Div>
