@@ -3,9 +3,10 @@ import api from '../../services/Api';
 import { useEffect, useState } from 'react';
 import { BackgroundGame } from '../../components/Container/telaGame';
 import { Bola, Div } from '../../components/Bolas';
-import { DivC, DivS } from '../../components/Cartela';
+import { DivC, DivS, DivCS } from '../../components/Cartela';
 import { Tr } from '../../components/Bingo/Tr.bingo';
 import { Back, Show } from '../../components/Button/selectButtons';
+import { Taca, Medalha, Trofeu } from '../../components/premios';
 
 export const Game3 = () => {
   const [sorteio, setSorteio] = useState([]);
@@ -21,10 +22,9 @@ export const Game3 = () => {
   const [trofeu2, setTrofeu2] = useState('');
   const [taca2, setTaca2] = useState('');
   const [medalha2, setMedalha2] = useState('');
-  const [trofeu2, setTrofeu2] = useState('');
-  const [taca2, setTaca2] = useState('');
-  const [medalha2, setMedalha2] = useState('');
-
+  const [trofeu3, setTrofeu3] = useState('');
+  const [taca3, setTaca3] = useState('');
+  const [medalha3, setMedalha3] = useState('');
 
   useEffect(() => {
     api.get('/partida').then((response) => {
@@ -139,7 +139,12 @@ export const Game3 = () => {
               ))}
             </tbody>
           </table>
-          <h4>{premio}</h4>
+          <DivCS>
+            {trofeu && <Trofeu></Trofeu>}
+            {taca && <Taca></Taca>}
+            {medalha && <Medalha></Medalha>}
+            <p>Parabens!! Você acertou: {acertos2.length}</p>
+          </DivCS>
         </DivC>
         {<Tr props={linha1} />}
 
@@ -153,7 +158,12 @@ export const Game3 = () => {
               ))}
             </tbody>
           </table>
-          <h4>{premio2}</h4>
+          <DivCS>
+            {trofeu2 && <Trofeu></Trofeu>}
+            {taca2 && <Taca></Taca>}
+            {medalha2 && <Medalha></Medalha>}
+            <p>Parabens!! Você acertou: {acertos2.length}</p>
+          </DivCS>
         </DivC>
         {<Tr props={novalinha2} />}
 
@@ -167,7 +177,12 @@ export const Game3 = () => {
               ))}
             </tbody>
           </table>
-          <h4>{premio3}</h4>
+          <DivCS>
+            {trofeu3 && <Trofeu></Trofeu>}
+            {taca3 && <Taca></Taca>}
+            {medalha3 && <Medalha></Medalha>}
+            <p>Parabens!! Você acertou: {acertos2.length}</p>
+          </DivCS>
         </DivC>
         {<Tr props={novalinha3} />}
       </DivS>
