@@ -5,7 +5,8 @@ import { BackgroundGame } from '../../components/Container/telaGame';
 import { Bola, Div } from '../../components/Bolas';
 import { DivC } from '../../components/Cartela';
 import { Tr } from '../../components/Bingo/Tr.bingo';
-import { Back } from '../../components/Button/voltar';
+import { Back, Show } from '../../components/Button/selectButtons';
+import { Taca, Medalha, Trofeu } from '../../components/premios';
 
 export const Game = () => {
   const [sorteio, setSorteio] = useState([]);
@@ -13,7 +14,9 @@ export const Game = () => {
   const [cor, setCor] = useState('');
   const [cor2, setCor2] = useState('none');
   const [bMostrar, setbMostar] = useState('Mostrar Acertos');
-  const [premio, setPremio] = useState('');
+  const [trofeu, setTrofeu] = useState('');
+  const [taca, setTaca] = useState('');
+  const [medalha, setMedalha] = useState('');
 
   useEffect(() => {
     api.get('/partida').then((response) => {
@@ -27,7 +30,7 @@ export const Game = () => {
       const tm = response.data.length - 1;
       console.log(tm);
       setLinha(response.data[tm].linhaCartela);
-       console.log(response.data.lentgh + " CARTELA ");
+      console.log(response.data.lentgh + ' CARTELA ');
     });
   }, []);
 
@@ -40,16 +43,20 @@ export const Game = () => {
   const acertos = sorteioInt.filter((numero) => linha1.includes(numero));
 
   const acertosOrder = acertos.sort((a, b) => a - b);
-  const resposta = `Parabens!!! Você acertou: ${acertos.length} Numeros => ${acertos.sort(
-    (a, b) => a - b
-  )}`;
-  const tentativa = ' Que pena Quantidade insificiente ';
+
+  // const respostaMedalha = `Parabens!!! Você acertou: ${acertos.length}`;
+
+  // const respostaTrofeu = `Parabens!!! Você acertou: ${acertos.length}`;
+
+  // const respostaTaca = `Parabens!!! Você acertou: ${acertos.length}`;
 
   useEffect(() => {
-    if (acertos.length >= 8) {
-      setPremio(resposta);
-    } else {
-      setPremio(tentativa);
+    if (acertos.length == 15) {
+      setTrofeu(true);
+    } else if (acertos.length >= 6 && acertos.length <= 10) {
+      setTaca(true);
+    } else if (acertos.length <= 5) {
+      setMedalha(true);
     }
   }, [acertos]);
 
@@ -80,7 +87,6 @@ export const Game = () => {
         <DivC style={{ display: cor2 }}>
           <table>
             <tbody>
-              
               {acertosOrder.map((item, i) => (
                 <tr key={i} style={{ background: 'green' }}>
                   <td>{item}</td>
@@ -88,12 +94,14 @@ export const Game = () => {
               ))}
             </tbody>
           </table>
-          <h4>{premio}</h4>
+          {trofeu && <Trofeu>{acertos.length}</Trofeu>}
+          {taca && <Taca>{acertos.length}</Taca>}
+          {medalha && <Medalha>{acertos.length}</Medalha>}
         </DivC>
         {<Tr props={linha1} />}
       </Div>
 
-      <button onClick={marcar}>{bMostrar}</button>
+      <Show onClick={marcar}>{bMostrar}</Show>
     </BackgroundGame>
   );
 };

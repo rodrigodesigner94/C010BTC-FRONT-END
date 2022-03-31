@@ -5,7 +5,7 @@ import { BackgroundGame } from '../../components/Container/telaGame';
 import { Bola, Div } from '../../components/Bolas';
 import { DivC, DivS } from '../../components/Cartela';
 import { Tr } from '../../components/Bingo/Tr.bingo';
-import { Back } from '../../components/Button/voltar';
+import { Back, Show } from '../../components/Button/selectButtons';
 
 export const Game3 = () => {
   const [sorteio, setSorteio] = useState([]);
@@ -68,29 +68,22 @@ export const Game3 = () => {
   useEffect(() => {
     if (acertos.length >= 8) {
       setPremio(resposta);
-      console.log(resposta);
     } else {
       setPremio(tentativa);
     }
-  }, [acertos]);
 
-  useEffect(() => {
     if (acertos2.length >= 8) {
       setPremio2(resposta2);
-      console.log(resposta2);
     } else {
       setPremio2(tentativa);
     }
-  }, [acertos2]);
 
-  useEffect(() => {
     if (acertos3.length >= 8) {
       setPremio3(resposta3);
-      console.log(resposta3);
     } else {
       setPremio3(tentativa);
     }
-  }, [acertos3]);
+  }, [acertos, acertos2, acertos3]);
 
   const marcar = () => {
     if (cor === '') {
@@ -129,6 +122,7 @@ export const Game3 = () => {
           <h4>{premio}</h4>
         </DivC>
         {<Tr props={linha1} />}
+
         <DivC style={{ display: cor2 }}>
           <table>
             <tbody>
@@ -142,6 +136,7 @@ export const Game3 = () => {
           <h4>{premio2}</h4>
         </DivC>
         {<Tr props={novalinha2} />}
+
         <DivC style={{ display: cor2 }}>
           <table>
             <tbody>
@@ -157,7 +152,7 @@ export const Game3 = () => {
         {<Tr props={novalinha3} />}
       </DivS>
 
-      <button onClick={marcar}>{bMostrar}</button>
+      <Show onClick={marcar}>{bMostrar}</Show>
     </BackgroundGame>
   );
 };

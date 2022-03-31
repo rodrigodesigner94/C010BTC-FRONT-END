@@ -23,8 +23,8 @@ export const Bola = styled(Card)`
 export const Div = styled.div`
   flex-wrap: wrap;
   display: flex;
-  margin: 1rem;
+  margin: rem;
   align-items: center;
   justify-content: center;
-  max-width: 51rem;
+  max-width: 52rem;
 `;

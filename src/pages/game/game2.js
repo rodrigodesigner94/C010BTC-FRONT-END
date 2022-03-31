@@ -5,7 +5,7 @@ import { BackgroundGame } from '../../components/Container/telaGame';
 import { Bola, Div } from '../../components/Bolas';
 import { DivC, DivS } from '../../components/Cartela';
 import { Tr } from '../../components/Bingo/Tr.bingo';
-import { Back } from '../../components/Button/voltar';
+import { Back, Show } from '../../components/Button/selectButtons';
 
 export const Game2 = () => {
   const [sorteio, setSorteio] = useState([]);
@@ -25,6 +25,7 @@ export const Game2 = () => {
 
     api.get('/cartela').then((response) => {
       const tm = response.data.length - 1;
+      console.log(tm);
       setLinha(response.data[tm].linhaCartela);
       setLinha2(response.data[tm - 1].linhaCartela);
     });
@@ -60,15 +61,13 @@ export const Game2 = () => {
     } else {
       setPremio(tentativa);
     }
-  }, [acertos]);
 
-  useEffect(() => {
     if (acertos2.length >= 8) {
       setPremio2(resposta2);
     } else {
       setPremio2(tentativa);
     }
-  }, [acertos2]);
+  }, [acertos, acertos2]);
 
   const marcar = () => {
     if (cor === '') {
@@ -123,7 +122,7 @@ export const Game2 = () => {
         {<Tr props={novalinha2} />}
       </DivS>
 
-      <button onClick={marcar}>{bMostrar}</button>
+      <Show onClick={marcar}>{bMostrar}</Show>
     </BackgroundGame>
   );
 };

@@ -13,8 +13,8 @@ export const DivC = styled.div`
   padding: 0.8rem;
   margin: 0.8rem;
   border-radius: 1rem;
-  width: 25rem;
-  height: 17.2rem;
+  width: 23rem;
+  height: 18rem;
   align-items: center;
   justify-content: center;
   box-shadow: 3px 3px red, 1em 1rem 0.4em #aaa742;

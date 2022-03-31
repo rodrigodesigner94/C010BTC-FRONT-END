@@ -17,6 +17,7 @@ const ColS = styled(Col)`
   justify-content: center;
   padding: 0rem;
   margin: 0rem;
+  flex-wrap: wrap;
 
   a {
     text-decoration: none;
@@ -32,7 +33,7 @@ const DivD = styled.div`
   margin: 2rem;
   border-radius: 1rem;
   width: 20rem;
-  height: 12rem;
+  height: 15rem;
 
   h1 {
     font-family: Arial, Helvetica, sans-serif;
