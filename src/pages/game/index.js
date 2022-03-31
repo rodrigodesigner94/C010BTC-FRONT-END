@@ -53,10 +53,16 @@ export const Game = () => {
   useEffect(() => {
     if (acertos.length == 15) {
       setTrofeu(true);
+      setMedalha(false);
+      setTaca(false);
     } else if (acertos.length >= 6 && acertos.length <= 10) {
       setTaca(true);
+      setTrofeu(false);
+      setMedalha(false);
     } else if (acertos.length <= 5) {
       setMedalha(true);
+      setTaca(false);
+      setTrofeu(false);
     }
   }, [acertos]);
 
@@ -94,9 +100,11 @@ export const Game = () => {
               ))}
             </tbody>
           </table>
-          {trofeu && <Trofeu>{acertos.length}</Trofeu>}
-          {taca && <Taca>{acertos.length}</Taca>}
-          {medalha && <Medalha>{acertos.length}</Medalha>}
+          
+          {trofeu && <Trofeu></Trofeu>}
+          {taca && <Taca></Taca>}
+          {medalha && <Medalha></Medalha>}
+          <p>Parabens!!! Você acertou: {acertos.length}</p>
         </DivC>
         {<Tr props={linha1} />}
       </Div>

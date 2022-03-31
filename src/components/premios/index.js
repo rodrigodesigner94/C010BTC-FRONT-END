@@ -7,8 +7,8 @@ export const Taca = styled.div`
   background-image: url(${taca});
   background-repeat: no-repeat;
   background-size: contain;
-  width: 10rem;
-  height: 10rem;
+  width: 7rem;
+  height: 7rem;
   display: flex;
   margin: 0rem;
   justify-content: center;
