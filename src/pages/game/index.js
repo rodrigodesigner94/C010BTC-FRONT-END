@@ -44,12 +44,6 @@ export const Game = () => {
 
   const acertosOrder = acertos.sort((a, b) => a - b);
 
-  // const respostaMedalha = `Parabens!!! Você acertou: ${acertos.length}`;
-
-  // const respostaTrofeu = `Parabens!!! Você acertou: ${acertos.length}`;
-
-  // const respostaTaca = `Parabens!!! Você acertou: ${acertos.length}`;
-
   useEffect(() => {
     if (acertos.length == 15) {
       setTrofeu(true);

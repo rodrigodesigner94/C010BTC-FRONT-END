@@ -15,9 +15,16 @@ export const Game3 = () => {
   const [cor, setCor] = useState('');
   const [cor2, setCor2] = useState('none');
   const [bMostrar, setbMostar] = useState('Mostrar Acertos');
-  const [premio, setPremio] = useState('');
-  const [premio2, setPremio2] = useState('');
-  const [premio3, setPremio3] = useState('');
+  const [trofeu, setTrofeu] = useState('');
+  const [taca, setTaca] = useState('');
+  const [medalha, setMedalha] = useState('');
+  const [trofeu2, setTrofeu2] = useState('');
+  const [taca2, setTaca2] = useState('');
+  const [medalha2, setMedalha2] = useState('');
+  const [trofeu2, setTrofeu2] = useState('');
+  const [taca2, setTaca2] = useState('');
+  const [medalha2, setMedalha2] = useState('');
+
 
   useEffect(() => {
     api.get('/partida').then((response) => {
@@ -54,34 +61,47 @@ export const Game3 = () => {
   const acertosOrder2 = acertos2.sort((a, b) => a - b);
   const acertosOrder3 = acertos3.sort((a, b) => a - b);
 
-  const resposta = `Parabens!!! Você acertou: ${acertos.length} Numeros => ${acertos.sort(
-    (a, b) => a - b
-  )}`;
-  const resposta2 = `Parabens!!! Você acertou: ${acertos2.length} Numeros => ${acertos2.sort(
-    (a, b) => a - b
-  )}`;
-  const resposta3 = `Parabens!!! Você acertou: ${acertos3.length} Numeros => ${acertos3.sort(
-    (a, b) => a - b
-  )}`;
-  const tentativa = ' Que pena Quantidade insificiente ';
-
   useEffect(() => {
-    if (acertos.length >= 8) {
-      setPremio(resposta);
-    } else {
-      setPremio(tentativa);
+    if (acertos.length == 15) {
+      setTrofeu(true);
+      setMedalha(false);
+      setTaca(false);
+    } else if (acertos.length >= 6 && acertos.length <= 14) {
+      setTaca(true);
+      setTrofeu(false);
+      setMedalha(false);
+    } else if (acertos.length <= 5) {
+      setMedalha(true);
+      setTaca(false);
+      setTrofeu(false);
     }
 
-    if (acertos2.length >= 8) {
-      setPremio2(resposta2);
-    } else {
-      setPremio2(tentativa);
+    if (acertos2.length == 15) {
+      setTrofeu2(true);
+      setMedalha2(false);
+      setTaca2(false);
+    } else if (acertos.length >= 6 && acertos.length <= 14) {
+      setTaca2(true);
+      setTrofeu2(false);
+      setMedalha2(false);
+    } else if (acertos.length <= 5) {
+      setMedalha2(true);
+      setTaca2(false);
+      setTrofeu2(false);
     }
 
-    if (acertos3.length >= 8) {
-      setPremio3(resposta3);
-    } else {
-      setPremio3(tentativa);
+    if (acertos3.length == 15) {
+      setTrofeu3(true);
+      setMedalha3(false);
+      setTaca3(false);
+    } else if (acertos.length >= 6 && acertos.length <= 14) {
+      setTaca3(true);
+      setTrofeu3(false);
+      setMedalha3(false);
+    } else if (acertos.length <= 5) {
+      setMedalha3(true);
+      setTaca3(false);
+      setTrofeu3(false);
     }
   }, [acertos, acertos2, acertos3]);
 
