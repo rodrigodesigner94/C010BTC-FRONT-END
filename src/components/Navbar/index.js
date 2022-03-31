@@ -27,7 +27,7 @@ export const NavBar = () => {
   }, [logged, user.firstName]);
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="primary" variant="light">
       <Container>
         <Navbar.Brand href="/">Vegas Bingo</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
