@@ -33,8 +33,8 @@ export const Trofeu = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   padding: 1rem;
-  width: 7rem;
-  height: 7rem;
+  width: 5rem;
+  height: 5rem;
 
   :hover {
     transform: scale(1.1);

@@ -58,8 +58,7 @@ export const DivAre = styled.div`
 `;
 
 export const Tr2 = ({ props }) => {
-  
-  //const [ display, setDispaly ] = useState('');
+  // const [ display, setDispaly ] = useState('');
   // const [ display2, setDispaly2 ] = useState('');
 
   const linhaB = props.slice(0, 3);
@@ -67,7 +66,6 @@ export const Tr2 = ({ props }) => {
   const linhaN = props.slice(6, 9);
   const linhaG = props.slice(9, 12);
   const linhaO = props.slice(12, 15);
-  
 
   return (
     <>

@@ -26,8 +26,9 @@ export const DivC = styled.div`
   margin: 0.8rem;
   border-radius: 1rem;
   width: 23rem;
-  height: 17rem;
+  height: 18rem;
   box-shadow: 3px 3px red, 1em 1rem 0.4em #aaa742;
+  align-items: center;
 
   table {
     display: flex;

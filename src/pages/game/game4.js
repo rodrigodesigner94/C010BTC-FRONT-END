@@ -5,7 +5,7 @@ import { BackgroundGame } from '../../components/Container/telaGame';
 import { Bola, Div } from '../../components/Bolas';
 import { DivC, DivS, DivCS } from '../../components/Cartela';
 import { Tr } from '../../components/Bingo/Tr.bingo';
-import { Tr2 } from '../../components/Bingo/Tr2.bingo'
+import { Tr2 } from '../../components/Bingo/Tr2.bingo';
 import { Back, Show } from '../../components/Button/selectButtons';
 import { Taca, Medalha, Trofeu } from '../../components/premios';
 import './style.css';
@@ -70,7 +70,7 @@ export const Game4 = () => {
 
   const acertos4 = sorteioInt.filter((numero) => novalinha4.includes(numero));
 
-  const acertosOrder = acertos.sort((a, b) => a - b);
+  // const acertosOrder = acertos.sort((a, b) => a - b);
   const acertosOrder2 = acertos2.sort((a, b) => a - b);
   const acertosOrder3 = acertos3.sort((a, b) => a - b);
   const acertosOrder4 = acertos4.sort((a, b) => a - b);
@@ -145,10 +145,9 @@ export const Game4 = () => {
     }
   };
 
-
   return (
     <BackgroundGame>
-      <a href="/cartela">
+      <a href="/">
         <Back />
       </a>
       <Div>
@@ -159,11 +158,11 @@ export const Game4 = () => {
 
       <DivS>
         <DivC style={{ display: cor2 }}>
-          <table >
+          <table>
             <tbody>
               {linha1.map((item, i) => (
                 <tr key={i} style={{ background: 'green' }}>
-                  <td >{item}</td>
+                  <td>{item}</td>
                 </tr>
               ))}
             </tbody>
@@ -172,8 +171,9 @@ export const Game4 = () => {
             {trofeu && <Trofeu></Trofeu>}
             {taca && <Taca></Taca>}
             {medalha && <Medalha></Medalha>}
-            <p>Parabens!! Você acertou: 15
-            {/* {acertos.length} */}
+            <p>
+              BINGO!! Você acertou: 15
+              {/* {acertos.length} */}
             </p>
           </DivCS>
         </DivC>

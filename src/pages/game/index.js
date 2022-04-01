@@ -74,7 +74,7 @@ export const Game = () => {
 
   return (
     <BackgroundGame>
-      <a href="/cartela">
+      <a href="/">
         <Back />
       </a>
       <Div>
