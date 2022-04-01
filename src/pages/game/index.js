@@ -45,11 +45,11 @@ export const Game = () => {
   const acertosOrder = acertos.sort((a, b) => a - b);
 
   useEffect(() => {
-    if (acertos.length == 15) {
+    if (acertos.length >= 15) {
       setTrofeu(true);
       setMedalha(false);
       setTaca(false);
-    } else if (acertos.length >= 9 && acertos.length <= 13) {
+    } else if (acertos.length >= 9) {
       setTaca(true);
       setTrofeu(false);
       setMedalha(false);
