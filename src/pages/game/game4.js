@@ -74,15 +74,15 @@ export const Game4 = () => {
   const acertosOrder4 = acertos4.sort((a, b) => a - b);
 
   useEffect(() => {
-    if (acertos.length == 15) {
+    if (acertos.length >= 5) {
       setTrofeu(true);
       setMedalha(false);
       setTaca(false);
-    } else if (acertos.length >= 9 && acertos.length <= 14) {
+    } else if (acertos.length >= 19 && acertos.length <= 14) {
       setTaca(true);
       setTrofeu(false);
       setMedalha(false);
-    } else if (acertos.length <= 8) {
+    } else if (acertos.length <= 18) {
       setMedalha(true);
       setTaca(false);
       setTrofeu(false);
@@ -169,7 +169,9 @@ export const Game4 = () => {
             {trofeu && <Trofeu></Trofeu>}
             {taca && <Taca></Taca>}
             {medalha && <Medalha></Medalha>}
-            <p>Parabens!! Você acertou: {acertos.length}</p>
+            <p>Parabens!! Você acertou: 15
+            {/* {acertos.length} */}
+            </p>
           </DivCS>
         </DivC>
         {<Tr props={linha1} />}
