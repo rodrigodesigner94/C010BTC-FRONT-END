@@ -5,8 +5,10 @@ import { BackgroundGame } from '../../components/Container/telaGame';
 import { Bola, Div } from '../../components/Bolas';
 import { DivC, DivS, DivCS } from '../../components/Cartela';
 import { Tr } from '../../components/Bingo/Tr.bingo';
+import { Tr2 } from '../../components/Bingo/Tr2.bingo'
 import { Back, Show } from '../../components/Button/selectButtons';
 import { Taca, Medalha, Trofeu } from '../../components/premios';
+import './style.css';
 
 export const Game4 = () => {
   const [sorteio, setSorteio] = useState([]);
@@ -143,6 +145,7 @@ export const Game4 = () => {
     }
   };
 
+
   return (
     <BackgroundGame>
       <a href="/cartela">
@@ -156,11 +159,11 @@ export const Game4 = () => {
 
       <DivS>
         <DivC style={{ display: cor2 }}>
-          <table>
+          <table >
             <tbody>
-              {acertosOrder.map((item, i) => (
+              {linha1.map((item, i) => (
                 <tr key={i} style={{ background: 'green' }}>
-                  <td>{item}</td>
+                  <td >{item}</td>
                 </tr>
               ))}
             </tbody>
@@ -174,7 +177,7 @@ export const Game4 = () => {
             </p>
           </DivCS>
         </DivC>
-        {<Tr props={linha1} />}
+        {<Tr2 props={linha1} />}
 
         <DivC style={{ display: cor2 }}>
           <table>

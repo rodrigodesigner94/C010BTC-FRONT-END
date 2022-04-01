@@ -33,14 +33,14 @@ export const DivAre = styled.div`
     margin-top: -12px;
   }
 
-  .coluna {
+  .colunaTr2 {
     display: inline-block;
     margin-bottom: 170px;
     width: 3rem;
     height: 3rem;
   }
 
-  .linha {
+  .linhaTr2 {
     width: 3rem;
     height: 3rem;
     margin: 10px 10px 10px -10px;
@@ -51,13 +51,13 @@ export const DivAre = styled.div`
     justify-content: center;
   }
 
-  .linha:hover {
+  .linhaTr2:hover {
     transform: scale(1.1);
     background-color: #8c9196;
   }
 `;
 
-export const Tr = ({ props }) => {
+export const Tr2 = ({ props }) => {
   
   //const [ display, setDispaly ] = useState('');
   // const [ display2, setDispaly2 ] = useState('');
@@ -72,46 +72,46 @@ export const Tr = ({ props }) => {
   return (
     <>
       <DivAre className="area-cartela">
-        <div className="coluna b">
+        <div className="colunaTr2 b">
           <h1>B</h1>
           {linhaB.map((item, i) => (
-            <div className="linha" style={{ background: '' }} key={i}>
+            <div className="linhaTr2" style={{ background: '' }} key={i}>
               {item}
             </div>
           ))}
         </div>
 
-        <div className="coluna i">
+        <div className="colunaTr2 i">
           <h1>I</h1>
           {linhaI.map((item, i) => (
-            <div className="linha" style={{ background: '' }} key={i}>
+            <div className="linhaTr2" style={{ background: '' }} key={i}>
               {item}
             </div>
           ))}
         </div>
 
-        <div className="coluna n">
+        <div className="colunaTr2 n">
           <h1>N</h1>
           {linhaN.map((item, i) => (
-            <div className="linha" style={{ background: '' }} key={i}>
+            <div className="linhaTr2" style={{ background: '' }} key={i}>
               {item}
             </div>
           ))}
         </div>
 
-        <div className="coluna g">
+        <div className="colunaTr2 g">
           <h1>G</h1>
           {linhaG.map((item, i) => (
-            <div className="linha" style={{ background: '' }} key={i}>
+            <div className="linhaTr2" style={{ background: '' }} key={i}>
               {item}
             </div>
           ))}
         </div>
 
-        <div className="coluna o">
+        <div className="colunaTr2 o">
           <h1>O</h1>
           {linhaO.map((item, i) => (
-            <div className="linha" style={{ background: '' }} key={i}>
+            <div className="linhaTr2" style={{ background: '' }} key={i}>
               {item}
             </div>
           ))}
