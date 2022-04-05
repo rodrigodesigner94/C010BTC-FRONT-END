@@ -13,10 +13,10 @@ Na versão atual nossa aplicação está consumindo a <a href="https://bingoo-bt
 
 This Project was developed to bootcamp from  <a href="https://blueedtech.com.br/">Bleu EdTech</a> in partnership Pipa Studios <a href="https://www.pipastudios.com/">Pipa Studios</a>.
 
-Here we have a application builded whit React.JS to a bingo game, this is a game mode that get up Pipa Studios to current success and has in catalog a game whit 5 millions downloads and 200 thousand players here in Brazil, in addition to having internetional products.
+Here we have an application builded whit React.JS to a bingo game, this is a game mode that got up Pipa Studios to current success and has in catalog a game whit 5 millions downloads and 200 thousand players here in Brazil, in addition to having internetional products.
 
-Did you alredy head someone says that played bingo when in Vegas? If you answered no, same here. that's why we propose fun while passing by toristcs place  from Veigas.
+Did you alredy head someone says that played bingo when in Vegas? If you answered no, same here. That's why we propose fun while passing by toristc places  from Veigas.
 And never forget, what happens in vegas, stays in Vegas.
 
 The current app version is commsuming the <a href="https://bingoo-btc.herokuapp.com/api/">API</a> builded by us and is possible show register screans and users log in.
-we have also numbers draw, display of numbered cards (the amount is chosen by the user).
+we have also numbers draw and display of numbered cards (the amount is chosen by the user).
