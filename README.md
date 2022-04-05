@@ -11,7 +11,7 @@ Na versão atual nossa aplicação está consumindo a <a href="https://bingoo-bt
 <a href="https://bingo-btc-front.herokuapp.com/">Welcome to fabulous Vegas Bingo</a>
 
 
-This Project was developed to bootcamp from  <a href="https://blueedtech.com.br/">Bleu EdTech</a> in partnership Pipa Studios <href="https://www.pipastudios.com/">Pipa Studios</a>.
+This Project was developed to bootcamp from  <a href="https://blueedtech.com.br/">Bleu EdTech</a> in partnership Pipa Studios <a href="https://www.pipastudios.com/">Pipa Studios</a>.
 
 Here we have a application builded whit React.JS to a bingo game, this is a game mode that get up Pipa Studios to current success and has in catalog a game whit 5 millions downloads and 200 thousand players here in Brazil, in addition to having internetional products.
 
